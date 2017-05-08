@@ -1,0 +1,2891 @@
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: PROCTAB *
+type_name: PROCTAB *
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'mrb_value %{as} = (%{box} == NULL ? mrb_nil_value() : mruby_Procps_box_PROCTAB(mrb,
+    %{box}));'
+  name: mruby_Procps_box_PROCTAB
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'PROCTAB * %{as} = (mrb_nil_p(%{unbox}) ? NULL : mruby_Procps_unbox_PROCTAB(%{unbox}));'
+  name: mruby_Procps_unbox_PROCTAB
+type_check_template: |
+  if (!mruby_Procps_typecheck_PROCTAB(mrb, %{value})) {
+    mrb_raise(mrb, E_TYPE_ERROR, "PROCTAB expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: PROCTAB *const restrict
+type_name: PROCTAB *const restrict
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_PROCTAB_PTR_restrict(mrb,
+    %{box});
+  name: TODO_mruby_box_PROCTAB_PTR_restrict
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: PROCTAB *const restrict %{as} = TODO_mruby_unbox_PROCTAB_PTR_restrict(%{unbox});
+  name: TODO_mruby_unbox_PROCTAB_PTR_restrict
+type_check_template: 'TODO_type_check_PROCTAB_PTR_restrict(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: bool
+type_name: bool
+recv_template: mrb_bool %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: b
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_bool_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: bool %{as} = mrb_test(%{unbox});
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->true_class) && !mrb_obj_is_kind_of(mrb, %{value}, mrb->false_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Boolean expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: char
+type_name: char
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: char %{as} = (char)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: char *
+type_name: char *
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'mrb_value %{as} = (%{box} == NULL ? mrb_nil_value() : mruby_Procps_box_void_pointer(mrb,
+    %{box}));'
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'void * %{as} = (mrb_nil_p(%{unbox}) ? NULL : mruby_Procps_unbox_void_pointer(mrb,
+    %{unbox}));'
+type_check_template: |
+  if (!mruby_Procps_typecheck_void_pointer(mrb, %{value}, "char *")) {
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: char *const restrict
+type_name: char *const restrict
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_char_PTR_restrict(mrb, %{box});
+  name: TODO_mruby_box_char_PTR_restrict
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: char *const restrict %{as} = TODO_mruby_unbox_char_PTR_restrict(%{unbox});
+  name: TODO_mruby_unbox_char_PTR_restrict
+type_check_template: 'TODO_type_check_char_PTR_restrict(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: char *const restrict *restrict
+type_name: char *const restrict *restrict
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_char_PTR_restrict_PTR_restrict(mrb,
+    %{box});
+  name: TODO_mruby_box_char_PTR_restrict_PTR_restrict
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: char *const restrict *restrict %{as} = TODO_mruby_unbox_char_PTR_restrict_PTR_restrict(%{unbox});
+  name: TODO_mruby_unbox_char_PTR_restrict_PTR_restrict
+type_check_template: 'TODO_type_check_char_PTR_restrict_PTR_restrict(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: char *restrict
+type_name: char *restrict
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_char_PTR_restrict(mrb, %{box});
+  name: TODO_mruby_box_char_PTR_restrict
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: char *restrict %{as} = TODO_mruby_unbox_char_PTR_restrict(%{unbox});
+  name: TODO_mruby_unbox_char_PTR_restrict
+type_check_template: 'TODO_type_check_char_PTR_restrict(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const bool
+type_name: const bool
+recv_template: mrb_bool %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: b
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_bool_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const bool %{as} = mrb_test(%{unbox});
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->true_class) && !mrb_obj_is_kind_of(mrb, %{value}, mrb->false_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Boolean expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const char
+type_name: const char
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const char %{as} = (const char)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const char *
+type_name: const char *
+recv_template: char * %{value} = NULL;
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: z
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'mrb_value %{as} = %{box} == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb,
+    %{box});'
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const char * %{as} = mrb_string_value_cstr(mrb, &%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->string_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const char *const restrict
+type_name: const char *const restrict
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_char_PTR_restrict(mrb, %{box});
+  name: TODO_mruby_box_char_PTR_restrict
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const char *const restrict %{as} = TODO_mruby_unbox_char_PTR_restrict(%{unbox});
+  name: TODO_mruby_unbox_char_PTR_restrict
+type_check_template: 'TODO_type_check_char_PTR_restrict(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const char *const restrict *restrict
+type_name: const char *const restrict *restrict
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_char_PTR_restrict_PTR_restrict(mrb,
+    %{box});
+  name: TODO_mruby_box_char_PTR_restrict_PTR_restrict
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const char *const restrict *restrict %{as} = TODO_mruby_unbox_char_PTR_restrict_PTR_restrict(%{unbox});
+  name: TODO_mruby_unbox_char_PTR_restrict_PTR_restrict
+type_check_template: 'TODO_type_check_char_PTR_restrict_PTR_restrict(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const char *restrict
+type_name: const char *restrict
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_char_PTR_restrict(mrb, %{box});
+  name: TODO_mruby_box_char_PTR_restrict
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const char *restrict %{as} = TODO_mruby_unbox_char_PTR_restrict(%{unbox});
+  name: TODO_mruby_unbox_char_PTR_restrict
+type_check_template: 'TODO_type_check_char_PTR_restrict(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const double
+type_name: const double
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const double %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const float
+type_name: const float
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const float %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const int
+type_name: const int
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const int %{as} = (const int)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const int32_t
+type_name: const int32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const int32_t %{as} = (const int32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const int64_t
+type_name: const int64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const int64_t %{as} = (const int64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const long
+type_name: const long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const long %{as} = (const long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const long long
+type_name: const long long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const long long %{as} = (const long long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const proc_t *const restrict
+type_name: const proc_t *const restrict
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_proc_t_PTR_restrict(mrb, %{box});
+  name: TODO_mruby_box_proc_t_PTR_restrict
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const proc_t *const restrict %{as} = TODO_mruby_unbox_proc_t_PTR_restrict(%{unbox});
+  name: TODO_mruby_unbox_proc_t_PTR_restrict
+type_check_template: 'TODO_type_check_proc_t_PTR_restrict(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const short
+type_name: const short
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const short %{as} = (const short)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const singed bool
+type_name: const singed bool
+recv_template: mrb_bool %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: b
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_bool_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const singed bool %{as} = mrb_test(%{unbox});
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->true_class) && !mrb_obj_is_kind_of(mrb, %{value}, mrb->false_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Boolean expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const singed char
+type_name: const singed char
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const singed char %{as} = (const singed char)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const singed double
+type_name: const singed double
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const singed double %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const singed float
+type_name: const singed float
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const singed float %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const singed int
+type_name: const singed int
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const singed int %{as} = (const singed int)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const singed int32_t
+type_name: const singed int32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const singed int32_t %{as} = (const singed int32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const singed int64_t
+type_name: const singed int64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const singed int64_t %{as} = (const singed int64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const singed long
+type_name: const singed long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const singed long %{as} = (const singed long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const singed long long
+type_name: const singed long long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const singed long long %{as} = (const singed long long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const singed short
+type_name: const singed short
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const singed short %{as} = (const singed short)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const singed size_t
+type_name: const singed size_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const singed size_t %{as} = (const singed size_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const singed uint32_t
+type_name: const singed uint32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const singed uint32_t %{as} = (const singed uint32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const singed uint64_t
+type_name: const singed uint64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const singed uint64_t %{as} = (const singed uint64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const size_t
+type_name: const size_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const size_t %{as} = (const size_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const uint32_t
+type_name: const uint32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const uint32_t %{as} = (const uint32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const uint64_t
+type_name: const uint64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const uint64_t %{as} = (const uint64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const unsigned bool
+type_name: const unsigned bool
+recv_template: mrb_bool %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: b
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_bool_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const unsigned bool %{as} = mrb_test(%{unbox});
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->true_class) && !mrb_obj_is_kind_of(mrb, %{value}, mrb->false_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Boolean expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const unsigned char
+type_name: const unsigned char
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const unsigned char %{as} = (const unsigned char)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const unsigned double
+type_name: const unsigned double
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const unsigned double %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const unsigned float
+type_name: const unsigned float
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const unsigned float %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const unsigned int
+type_name: const unsigned int
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const unsigned int %{as} = (const unsigned int)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const unsigned int32_t
+type_name: const unsigned int32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const unsigned int32_t %{as} = (const unsigned int32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const unsigned int64_t
+type_name: const unsigned int64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const unsigned int64_t %{as} = (const unsigned int64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const unsigned long
+type_name: const unsigned long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const unsigned long %{as} = (const unsigned long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const unsigned long long
+type_name: const unsigned long long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const unsigned long long %{as} = (const unsigned long long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const unsigned short
+type_name: const unsigned short
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const unsigned short %{as} = (const unsigned short)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const unsigned size_t
+type_name: const unsigned size_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const unsigned size_t %{as} = (const unsigned size_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const unsigned uint32_t
+type_name: const unsigned uint32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const unsigned uint32_t %{as} = (const unsigned uint32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: const unsigned uint64_t
+type_name: const unsigned uint64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: const unsigned uint64_t %{as} = (const unsigned uint64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: dev_t
+type_name: dev_t
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_dev_t(mrb, %{box});
+  name: TODO_mruby_box_dev_t
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: dev_t %{as} = TODO_mruby_unbox_dev_t(%{unbox});
+  name: TODO_mruby_unbox_dev_t
+type_check_template: 'TODO_type_check_dev_t(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: double
+type_name: double
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: double %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: double *
+type_name: double *
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'mrb_value %{as} = (%{box} == NULL ? mrb_nil_value() : mruby_Procps_box_void_pointer(mrb,
+    %{box}));'
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'void * %{as} = (mrb_nil_p(%{unbox}) ? NULL : mruby_Procps_unbox_void_pointer(mrb,
+    %{unbox}));'
+type_check_template: |
+  if (!mruby_Procps_typecheck_void_pointer(mrb, %{value}, "double *")) {
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: float
+type_name: float
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: float %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: gid_t
+type_name: gid_t
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_gid_t(mrb, %{box});
+  name: TODO_mruby_box_gid_t
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: gid_t %{as} = TODO_mruby_unbox_gid_t(%{unbox});
+  name: TODO_mruby_unbox_gid_t
+type_check_template: 'TODO_type_check_gid_t(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: ignore
+type_name: ignore
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_ignore(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: ignore %{as} = TODO_mruby_unbox_ignore(%{unbox});
+ignore: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: int
+type_name: int
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: int %{as} = (int)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: int (*)(proc_t *)
+type_name: int (*)(proc_t *)
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_int_LPAREN_PTR_RPAREN_LPAREN_proc_t_PTR_RPAREN(mrb,
+    %{box});
+  name: TODO_mruby_box_int_LPAREN_PTR_RPAREN_LPAREN_proc_t_PTR_RPAREN
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: int (*%{as})(proc_t *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_proc_t_PTR_RPAREN(%{unbox});
+  name: TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_proc_t_PTR_RPAREN
+type_check_template: 'TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_proc_t_PTR_RPAREN(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: int *
+type_name: int *
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'mrb_value %{as} = (%{box} == NULL ? mrb_nil_value() : mruby_Procps_box_void_pointer(mrb,
+    %{box}));'
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'void * %{as} = (mrb_nil_p(%{unbox}) ? NULL : mruby_Procps_unbox_void_pointer(mrb,
+    %{unbox}));'
+type_check_template: |
+  if (!mruby_Procps_typecheck_void_pointer(mrb, %{value}, "int *")) {
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: int32_t
+type_name: int32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: int32_t %{as} = (int32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: int64_t
+type_name: int64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: int64_t %{as} = (int64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: jiff *restrict
+type_name: jiff *restrict
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_jiff_PTR_restrict(mrb, %{box});
+  name: TODO_mruby_box_jiff_PTR_restrict
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: jiff *restrict %{as} = TODO_mruby_unbox_jiff_PTR_restrict(%{unbox});
+  name: TODO_mruby_unbox_jiff_PTR_restrict
+type_check_template: 'TODO_type_check_jiff_PTR_restrict(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: long
+type_name: long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: long %{as} = (long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: long long
+type_name: long long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: long long %{as} = (long long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: nullterminated:cstring:array
+type_name: char **
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: A!
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: |
+    mrb_value %{as} = mrb_ary_new(mrb);
+    do {
+      int i = 0;
+      while (%{box}[i] != NULL) {
+        mrb_ary_push(mrb, %{as}, mrb_str_new_cstr(mrb, %{box}[i]));
+        ++i;
+      }
+    } while (0);
+  cleanup_template: |
+    if (%{value} != NULL)
+      int i = 0;
+      while (%{value}[i] != NULL) {
+        free(%{value}[i]);
+        ++i;
+      }
+      free(%{value});
+    }
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: |
+    char ** %{as} = NULL;
+    do {
+      if (mrb_nil_p(%{unbox})) {
+        %{as} = NULL;
+      } else {
+        int len = mrb_ary_len(mrb, %{unbox});
+        %{as} = (char**)calloc((len + 1), sizeof(char*));
+        for (int i = 0; i < len; i++) {
+          mrb_value str = mrb_ary_ref(mrb, %{unbox}, i);
+          %{as}[i] = mrb_string_value_cstr(mrb, &str);
+        }
+        %{as}[len] = NULL;
+      }
+    } while (0);
+  cleanup_template: if (%{value} != NULL) free(%{value});
+needs_unboxing: true
+needs_type_check: false
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: out:char**,int*
+type_name: char *
+recv_template: |
+  char * %{value} = NULL;
+  int %{value}_length = 0;
+get_args_template: "&%{value}"
+invocation_arg_template: "&%{value}, &%{value}_length"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: |
+    mrb_value %{as};
+    if (%{box} == NULL) {
+      %{as} = mrb_nil_value();
+    } else {
+      %{as} = mrb_str_new(mrb, %{box}, %{box}_length);
+    }
+  cleanup_template: free(%{value});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: out:char**,int* %{as} = TODO_mruby_unbox_out:char_PTR_PTR_COMMAint_PTR(%{unbox});
+needs_unboxing: false
+out_only: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: out:cstring
+type_name: char *
+recv_template: char * %{value} = NULL;
+get_args_template: "&%{value}"
+invocation_arg_template: "&%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_str_new_cstr(mrb, %{box});
+  cleanup_template: free(%{value});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: out:cstring %{as} = TODO_mruby_unbox_out:cstring(%{unbox});
+out_only: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: out:int *
+type_name: int
+recv_template: int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "&%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: out:int * %{as} = TODO_mruby_unbox_out:int_PTR(%{unbox});
+out_only: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: pid_t
+type_name: pid_t
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_pid_t(mrb, %{box});
+  name: TODO_mruby_box_pid_t
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: pid_t %{as} = TODO_mruby_unbox_pid_t(%{unbox});
+  name: TODO_mruby_unbox_pid_t
+type_check_template: 'TODO_type_check_pid_t(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: proc_data_t *
+type_name: proc_data_t *
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'mrb_value %{as} = (%{box} == NULL ? mrb_nil_value() : mruby_Procps_box_proc_data_t(mrb,
+    %{box}));'
+  name: mruby_Procps_box_proc_data_t
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'proc_data_t * %{as} = (mrb_nil_p(%{unbox}) ? NULL : mruby_Procps_unbox_proc_data_t(%{unbox}));'
+  name: mruby_Procps_unbox_proc_data_t
+type_check_template: |
+  if (!mruby_Procps_typecheck_ProcData(mrb, %{value})) {
+    mrb_raise(mrb, E_TYPE_ERROR, "ProcData expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: proc_t *
+type_name: proc_t *
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'mrb_value %{as} = (%{box} == NULL ? mrb_nil_value() : mruby_Procps_box_proc_t(mrb,
+    %{box}));'
+  name: mruby_Procps_box_proc_t
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'proc_t * %{as} = (mrb_nil_p(%{unbox}) ? NULL : mruby_Procps_unbox_proc_t(%{unbox}));'
+  name: mruby_Procps_unbox_proc_t
+type_check_template: |
+  if (!mruby_Procps_typecheck_Proc(mrb, %{value})) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Proc expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: proc_t **
+type_name: proc_t **
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_proc_t_PTR_PTR(mrb, %{box});
+  name: TODO_mruby_box_proc_t_PTR_PTR
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: proc_t ** %{as} = TODO_mruby_unbox_proc_t_PTR_PTR(%{unbox});
+  name: TODO_mruby_unbox_proc_t_PTR_PTR
+type_check_template: 'TODO_type_check_proc_t_PTR_PTR(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: proc_t *restrict
+type_name: proc_t *restrict
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_proc_t_PTR_restrict(mrb, %{box});
+  name: TODO_mruby_box_proc_t_PTR_restrict
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: proc_t *restrict %{as} = TODO_mruby_unbox_proc_t_PTR_restrict(%{unbox});
+  name: TODO_mruby_unbox_proc_t_PTR_restrict
+type_check_template: 'TODO_type_check_proc_t_PTR_restrict(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: return:cstring
+type_name: char *
+recv_template: char * %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_str_new_cstr(mrb, %{box});
+  cleanup_template: free(%{value});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: return:cstring %{as} = TODO_mruby_unbox_return:cstring(%{unbox});
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: short
+type_name: short
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: short %{as} = (short)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed bool
+type_name: singed bool
+recv_template: mrb_bool %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: b
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_bool_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed bool %{as} = mrb_test(%{unbox});
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->true_class) && !mrb_obj_is_kind_of(mrb, %{value}, mrb->false_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Boolean expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed char
+type_name: singed char
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed char %{as} = (singed char)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed const bool
+type_name: singed const bool
+recv_template: mrb_bool %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: b
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_bool_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed const bool %{as} = mrb_test(%{unbox});
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->true_class) && !mrb_obj_is_kind_of(mrb, %{value}, mrb->false_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Boolean expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed const char
+type_name: singed const char
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed const char %{as} = (singed const char)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed const double
+type_name: singed const double
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed const double %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed const float
+type_name: singed const float
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed const float %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed const int
+type_name: singed const int
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed const int %{as} = (singed const int)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed const int32_t
+type_name: singed const int32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed const int32_t %{as} = (singed const int32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed const int64_t
+type_name: singed const int64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed const int64_t %{as} = (singed const int64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed const long
+type_name: singed const long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed const long %{as} = (singed const long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed const long long
+type_name: singed const long long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed const long long %{as} = (singed const long long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed const short
+type_name: singed const short
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed const short %{as} = (singed const short)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed const size_t
+type_name: singed const size_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed const size_t %{as} = (singed const size_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed const uint32_t
+type_name: singed const uint32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed const uint32_t %{as} = (singed const uint32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed const uint64_t
+type_name: singed const uint64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed const uint64_t %{as} = (singed const uint64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed double
+type_name: singed double
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed double %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed float
+type_name: singed float
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed float %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed int
+type_name: singed int
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed int %{as} = (singed int)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed int32_t
+type_name: singed int32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed int32_t %{as} = (singed int32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed int64_t
+type_name: singed int64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed int64_t %{as} = (singed int64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed long
+type_name: singed long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed long %{as} = (singed long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed long long
+type_name: singed long long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed long long %{as} = (singed long long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed short
+type_name: singed short
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed short %{as} = (singed short)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed size_t
+type_name: singed size_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed size_t %{as} = (singed size_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed uint32_t
+type_name: singed uint32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed uint32_t %{as} = (singed uint32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: singed uint64_t
+type_name: singed uint64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: singed uint64_t %{as} = (singed uint64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: size_t
+type_name: size_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: size_t %{as} = (size_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: string
+type_name: string
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_str_new_cstr(mrb, %{box}.c_str());
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: string %{as} = (string) mrb_string_value_cstr(mrb, &%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->string_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "String expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: struct PROCTAB
+type_name: struct PROCTAB
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: |
+    struct PROCTAB* new_%{as} = TODO_move_PROCTAB_to_heap(%{box});
+    mrb_value %{as} = mruby_Procps_box_PROCTAB(mrb, &%{box});
+  name: mruby_Procps_box_PROCTAB
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: struct PROCTAB %{as} = *(mruby_Procps_unbox_PROCTAB(%{unbox}));
+  name: mruby_Procps_unbox_PROCTAB
+type_check_template: |
+  if (!mruby_Procps_typecheck_PROCTAB(mrb, %{value})) {
+  if (!mrb_obj_is_kind_of(mrb, %{value}, Procps_PROCTAB_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "PROCTAB expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: struct disk_stat
+type_name: struct disk_stat
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: |
+    struct disk_stat* new_%{as} = TODO_move_disk_stat_to_heap(%{box});
+    mrb_value %{as} = mruby_Procps_box_disk_stat(mrb, &%{box});
+  name: mruby_Procps_box_disk_stat
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: struct disk_stat %{as} = *(mruby_Procps_unbox_disk_stat(%{unbox}));
+  name: mruby_Procps_unbox_disk_stat
+type_check_template: |
+  if (!mruby_Procps_typecheck_DiskStat(mrb, %{value})) {
+  if (!mrb_obj_is_kind_of(mrb, %{value}, Procps_DiskStat_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DiskStat expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: struct disk_stat *
+type_name: struct disk_stat *
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'mrb_value %{as} = (%{box} == NULL ? mrb_nil_value() : mruby_Procps_box_disk_stat(mrb,
+    %{box}));'
+  name: mruby_Procps_box_disk_stat
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'struct disk_stat * %{as} = (mrb_nil_p(%{unbox}) ? NULL : mruby_Procps_unbox_disk_stat(%{unbox}));'
+  name: mruby_Procps_unbox_disk_stat
+type_check_template: |
+  if (!mruby_Procps_typecheck_DiskStat(mrb, %{value})) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DiskStat expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: struct disk_stat **
+type_name: struct disk_stat **
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_disk_stat_PTR_PTR(mrb, %{box});
+  name: TODO_mruby_box_disk_stat_PTR_PTR
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: struct disk_stat ** %{as} = TODO_mruby_unbox_disk_stat_PTR_PTR(%{unbox});
+  name: TODO_mruby_unbox_disk_stat_PTR_PTR
+type_check_template: 'TODO_type_check_disk_stat_PTR_PTR(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: struct partition_stat
+type_name: struct partition_stat
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: |
+    struct partition_stat* new_%{as} = TODO_move_partition_stat_to_heap(%{box});
+    mrb_value %{as} = mruby_Procps_box_partition_stat(mrb, &%{box});
+  name: mruby_Procps_box_partition_stat
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: struct partition_stat %{as} = *(mruby_Procps_unbox_partition_stat(%{unbox}));
+  name: mruby_Procps_unbox_partition_stat
+type_check_template: |
+  if (!mruby_Procps_typecheck_PartitionStat(mrb, %{value})) {
+  if (!mrb_obj_is_kind_of(mrb, %{value}, Procps_PartitionStat_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "PartitionStat expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: struct partition_stat **
+type_name: struct partition_stat **
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_partition_stat_PTR_PTR(mrb,
+    %{box});
+  name: TODO_mruby_box_partition_stat_PTR_PTR
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: struct partition_stat ** %{as} = TODO_mruby_unbox_partition_stat_PTR_PTR(%{unbox});
+  name: TODO_mruby_unbox_partition_stat_PTR_PTR
+type_check_template: 'TODO_type_check_partition_stat_PTR_PTR(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: struct proc_data_t
+type_name: struct proc_data_t
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: |
+    struct proc_data_t* new_%{as} = TODO_move_proc_data_t_to_heap(%{box});
+    mrb_value %{as} = mruby_Procps_box_proc_data_t(mrb, &%{box});
+  name: mruby_Procps_box_proc_data_t
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: struct proc_data_t %{as} = *(mruby_Procps_unbox_proc_data_t(%{unbox}));
+  name: mruby_Procps_unbox_proc_data_t
+type_check_template: |
+  if (!mruby_Procps_typecheck_ProcData(mrb, %{value})) {
+  if (!mrb_obj_is_kind_of(mrb, %{value}, Procps_ProcData_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "ProcData expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: struct proc_t
+type_name: struct proc_t
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: |
+    struct proc_t* new_%{as} = TODO_move_proc_t_to_heap(%{box});
+    mrb_value %{as} = mruby_Procps_box_proc_t(mrb, &%{box});
+  name: mruby_Procps_box_proc_t
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: struct proc_t %{as} = *(mruby_Procps_unbox_proc_t(%{unbox}));
+  name: mruby_Procps_unbox_proc_t
+type_check_template: |
+  if (!mruby_Procps_typecheck_Proc(mrb, %{value})) {
+  if (!mrb_obj_is_kind_of(mrb, %{value}, Procps_Proc_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Proc expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: struct slab_cache
+type_name: struct slab_cache
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: |
+    struct slab_cache* new_%{as} = TODO_move_slab_cache_to_heap(%{box});
+    mrb_value %{as} = mruby_Procps_box_slab_cache(mrb, &%{box});
+  name: mruby_Procps_box_slab_cache
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: struct slab_cache %{as} = *(mruby_Procps_unbox_slab_cache(%{unbox}));
+  name: mruby_Procps_unbox_slab_cache
+type_check_template: |
+  if (!mruby_Procps_typecheck_SlabCache(mrb, %{value})) {
+  if (!mrb_obj_is_kind_of(mrb, %{value}, Procps_SlabCache_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "SlabCache expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: struct slab_cache **
+type_name: struct slab_cache **
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_slab_cache_PTR_PTR(mrb, %{box});
+  name: TODO_mruby_box_slab_cache_PTR_PTR
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: struct slab_cache ** %{as} = TODO_mruby_unbox_slab_cache_PTR_PTR(%{unbox});
+  name: TODO_mruby_unbox_slab_cache_PTR_PTR
+type_check_template: 'TODO_type_check_slab_cache_PTR_PTR(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: struct slab_info
+type_name: struct slab_info
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: |
+    struct slab_info* new_%{as} = TODO_move_slab_info_to_heap(%{box});
+    mrb_value %{as} = mruby_Procps_box_slab_info(mrb, &%{box});
+  name: mruby_Procps_box_slab_info
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: struct slab_info %{as} = *(mruby_Procps_unbox_slab_info(%{unbox}));
+  name: mruby_Procps_unbox_slab_info
+type_check_template: |
+  if (!mruby_Procps_typecheck_SlabInfo(mrb, %{value})) {
+  if (!mrb_obj_is_kind_of(mrb, %{value}, Procps_SlabInfo_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "SlabInfo expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: struct slab_info *
+type_name: struct slab_info *
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'mrb_value %{as} = (%{box} == NULL ? mrb_nil_value() : mruby_Procps_box_slab_info(mrb,
+    %{box}));'
+  name: mruby_Procps_box_slab_info
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'struct slab_info * %{as} = (mrb_nil_p(%{unbox}) ? NULL : mruby_Procps_unbox_slab_info(%{unbox}));'
+  name: mruby_Procps_unbox_slab_info
+type_check_template: |
+  if (!mruby_Procps_typecheck_SlabInfo(mrb, %{value})) {
+    mrb_raise(mrb, E_TYPE_ERROR, "SlabInfo expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: struct slab_info **
+type_name: struct slab_info **
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_slab_info_PTR_PTR(mrb, %{box});
+  name: TODO_mruby_box_slab_info_PTR_PTR
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: struct slab_info ** %{as} = TODO_mruby_unbox_slab_info_PTR_PTR(%{unbox});
+  name: TODO_mruby_unbox_slab_info_PTR_PTR
+type_check_template: 'TODO_type_check_slab_info_PTR_PTR(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: struct slab_stat
+type_name: struct slab_stat
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: |
+    struct slab_stat* new_%{as} = TODO_move_slab_stat_to_heap(%{box});
+    mrb_value %{as} = mruby_Procps_box_slab_stat(mrb, &%{box});
+  name: mruby_Procps_box_slab_stat
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: struct slab_stat %{as} = *(mruby_Procps_unbox_slab_stat(%{unbox}));
+  name: mruby_Procps_unbox_slab_stat
+type_check_template: |
+  if (!mruby_Procps_typecheck_SlabStat(mrb, %{value})) {
+  if (!mrb_obj_is_kind_of(mrb, %{value}, Procps_SlabStat_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "SlabStat expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: struct slab_stat *
+type_name: struct slab_stat *
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'mrb_value %{as} = (%{box} == NULL ? mrb_nil_value() : mruby_Procps_box_slab_stat(mrb,
+    %{box}));'
+  name: mruby_Procps_box_slab_stat
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'struct slab_stat * %{as} = (mrb_nil_p(%{unbox}) ? NULL : mruby_Procps_unbox_slab_stat(%{unbox}));'
+  name: mruby_Procps_unbox_slab_stat
+type_check_template: |
+  if (!mruby_Procps_typecheck_SlabStat(mrb, %{value})) {
+    mrb_raise(mrb, E_TYPE_ERROR, "SlabStat expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: uid_t
+type_name: uid_t
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_uid_t(mrb, %{box});
+  name: TODO_mruby_box_uid_t
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: uid_t %{as} = TODO_mruby_unbox_uid_t(%{unbox});
+  name: TODO_mruby_unbox_uid_t
+type_check_template: 'TODO_type_check_uid_t(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: uint32_t
+type_name: uint32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: uint32_t %{as} = (uint32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: uint64_t
+type_name: uint64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: uint64_t %{as} = (uint64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned bool
+type_name: unsigned bool
+recv_template: mrb_bool %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: b
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_bool_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned bool %{as} = mrb_test(%{unbox});
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->true_class) && !mrb_obj_is_kind_of(mrb, %{value}, mrb->false_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Boolean expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned char
+type_name: unsigned char
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned char %{as} = (unsigned char)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned const bool
+type_name: unsigned const bool
+recv_template: mrb_bool %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: b
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_bool_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned const bool %{as} = mrb_test(%{unbox});
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->true_class) && !mrb_obj_is_kind_of(mrb, %{value}, mrb->false_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Boolean expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned const char
+type_name: unsigned const char
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned const char %{as} = (unsigned const char)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned const double
+type_name: unsigned const double
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned const double %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned const float
+type_name: unsigned const float
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned const float %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned const int
+type_name: unsigned const int
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned const int %{as} = (unsigned const int)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned const int32_t
+type_name: unsigned const int32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned const int32_t %{as} = (unsigned const int32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned const int64_t
+type_name: unsigned const int64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned const int64_t %{as} = (unsigned const int64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned const long
+type_name: unsigned const long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned const long %{as} = (unsigned const long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned const long long
+type_name: unsigned const long long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned const long long %{as} = (unsigned const long long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned const short
+type_name: unsigned const short
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned const short %{as} = (unsigned const short)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned const size_t
+type_name: unsigned const size_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned const size_t %{as} = (unsigned const size_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned const uint32_t
+type_name: unsigned const uint32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned const uint32_t %{as} = (unsigned const uint32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned const uint64_t
+type_name: unsigned const uint64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned const uint64_t %{as} = (unsigned const uint64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned double
+type_name: unsigned double
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned double %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned float
+type_name: unsigned float
+recv_template: mrb_float %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: f
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_float_value(mrb, %{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned float %{as} = mrb_float(%{unbox});
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->float_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Float expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned int
+type_name: unsigned int
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned int %{as} = (unsigned int)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned int *restrict
+type_name: unsigned int *restrict
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_unsigned_int_PTR_restrict(mrb,
+    %{box});
+  name: TODO_mruby_box_unsigned_int_PTR_restrict
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned int *restrict %{as} = TODO_mruby_unbox_unsigned_int_PTR_restrict(%{unbox});
+  name: TODO_mruby_unbox_unsigned_int_PTR_restrict
+type_check_template: 'TODO_type_check_unsigned_int_PTR_restrict(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned int32_t
+type_name: unsigned int32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned int32_t %{as} = (unsigned int32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned int64_t
+type_name: unsigned int64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned int64_t %{as} = (unsigned int64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned long
+type_name: unsigned long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned long %{as} = (unsigned long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned long *restrict
+type_name: unsigned long *restrict
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_unsigned_long_PTR_restrict(mrb,
+    %{box});
+  name: TODO_mruby_box_unsigned_long_PTR_restrict
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned long *restrict %{as} = TODO_mruby_unbox_unsigned_long_PTR_restrict(%{unbox});
+  name: TODO_mruby_unbox_unsigned_long_PTR_restrict
+type_check_template: 'TODO_type_check_unsigned_long_PTR_restrict(%{value});
+
+'
+unknown: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned long long
+type_name: unsigned long long
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned long long %{as} = (unsigned long long)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned short
+type_name: unsigned short
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned short %{as} = (unsigned short)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned size_t
+type_name: unsigned size_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned size_t %{as} = (unsigned size_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned uint32_t
+type_name: unsigned uint32_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned uint32_t %{as} = (unsigned uint32_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unsigned uint64_t
+type_name: unsigned uint64_t
+recv_template: mrb_int %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: i
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = mrb_fixnum_value(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: unsigned uint64_t %{as} = (unsigned uint64_t)%{unbox};
+needs_unboxing: false
+needs_type_check: false
+type_check_template: |
+  if (!mrb_obj_is_kind_of(mrb, %{value}, mrb->fixnum_class)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Fixnum expected");
+    return mrb_nil_value();
+  }
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: unused:pointer
+type_name: unused:pointer
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_unused:pointer(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: void * %{as} = NULL; /* Unused parameter */
+needs_unboxing: true
+needs_type_check: false
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: void
+type_name: void
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: mrb_value %{as} = TODO_mruby_box_void(%{box});
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: void %{as} = TODO_mruby_unbox_void(%{unbox});
+ignore: true
+--- !ruby/object:MRuby::Bindings::CTypes::Definition
+key: void *
+type_name: void *
+recv_template: mrb_value %{value};
+get_args_template: "&%{value}"
+invocation_arg_template: "%{value}"
+format_specifier: o
+field_swap_template: "%{old} = %{new};"
+boxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'mrb_value %{as} = (%{box} == NULL ? mrb_nil_value() : mruby_Procps_box_void_pointer(mrb,
+    %{box}));'
+unboxing_fn: !ruby/object:MRuby::Bindings::CTypes::BoxingFn
+  invocation_template: 'void * %{as} = (mrb_nil_p(%{unbox}) ? NULL : mruby_Procps_unbox_void_pointer(mrb,
+    %{unbox}));'
+type_check_template: |
+  if (!mruby_Procps_typecheck_void_pointer(mrb, %{value}, "void *")) {
+    return mrb_nil_value();
+  }

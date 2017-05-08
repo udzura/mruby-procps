@@ -1,0 +1,171 @@
+parent_type_usr,name,ruby_name,type,usr
+c:@S@PROCTAB,did_fake,did_fake,int,c:@S@PROCTAB@FI@did_fake
+c:@S@PROCTAB,finder,finder,"int (*)(struct PROCTAB *const restrict, proc_t *const restrict)",c:@S@PROCTAB@FI@finder
+c:@S@PROCTAB,flags,flags,unsigned int,c:@S@PROCTAB@FI@flags
+c:@S@PROCTAB,i,i,int,c:@S@PROCTAB@FI@i
+c:@S@PROCTAB,nuid,nuid,int,c:@S@PROCTAB@FI@nuid
+c:@S@PROCTAB,path,path,char [64],c:@S@PROCTAB@FI@path
+c:@S@PROCTAB,pathlen,pathlen,unsigned int,c:@S@PROCTAB@FI@pathlen
+c:@S@PROCTAB,pids,pids,pid_t *,c:@S@PROCTAB@FI@pids
+c:@S@PROCTAB,procfs,procfs,DIR *,c:@S@PROCTAB@FI@procfs
+c:@S@PROCTAB,reader,reader,"proc_t *(*)(struct PROCTAB *const restrict, proc_t *const restrict)",c:@S@PROCTAB@FI@reader
+c:@S@PROCTAB,taskdir,taskdir,DIR *,c:@S@PROCTAB@FI@taskdir
+c:@S@PROCTAB,taskdir_user,taskdir_user,pid_t,c:@S@PROCTAB@FI@taskdir_user
+c:@S@PROCTAB,taskfinder,taskfinder,"int (*)(struct PROCTAB *const restrict, const proc_t *const restrict, proc_t *const restrict, char *const restrict)",c:@S@PROCTAB@FI@taskfinder
+c:@S@PROCTAB,taskreader,taskreader,"proc_t *(*)(struct PROCTAB *const restrict, const proc_t *const restrict, proc_t *const restrict, char *const restrict)",c:@S@PROCTAB@FI@taskreader
+c:@S@PROCTAB,u,u,unsigned int,c:@S@PROCTAB@FI@u
+c:@S@PROCTAB,uids,uids,uid_t *,c:@S@PROCTAB@FI@uids
+c:@S@PROCTAB,vp,vp,void *,c:@S@PROCTAB@FI@vp
+c:@S@disk_stat,disk_name,disk_name,char [32],c:@S@disk_stat@FI@disk_name
+c:@S@disk_stat,inprogress_IO,inprogress_IO,unsigned int,c:@S@disk_stat@FI@inprogress_IO
+c:@S@disk_stat,merged_reads,merged_reads,unsigned int,c:@S@disk_stat@FI@merged_reads
+c:@S@disk_stat,merged_writes,merged_writes,unsigned int,c:@S@disk_stat@FI@merged_writes
+c:@S@disk_stat,milli_reading,milli_reading,unsigned int,c:@S@disk_stat@FI@milli_reading
+c:@S@disk_stat,milli_spent_IO,milli_spent_IO,unsigned int,c:@S@disk_stat@FI@milli_spent_IO
+c:@S@disk_stat,milli_writing,milli_writing,unsigned int,c:@S@disk_stat@FI@milli_writing
+c:@S@disk_stat,partitions,partitions,unsigned int,c:@S@disk_stat@FI@partitions
+c:@S@disk_stat,reads,reads,unsigned int,c:@S@disk_stat@FI@reads
+c:@S@disk_stat,reads_sectors,reads_sectors,unsigned long long,c:@S@disk_stat@FI@reads_sectors
+c:@S@disk_stat,weighted_milli_spent_IO,weighted_milli_spent_IO,unsigned int,c:@S@disk_stat@FI@weighted_milli_spent_IO
+c:@S@disk_stat,writes,writes,unsigned int,c:@S@disk_stat@FI@writes
+c:@S@disk_stat,written_sectors,written_sectors,unsigned long long,c:@S@disk_stat@FI@written_sectors
+c:@S@partition_stat,parent_disk,parent_disk,unsigned int,c:@S@partition_stat@FI@parent_disk
+c:@S@partition_stat,partition_name,partition_name,char [35],c:@S@partition_stat@FI@partition_name
+c:@S@partition_stat,reads,reads,unsigned int,c:@S@partition_stat@FI@reads
+c:@S@partition_stat,reads_sectors,reads_sectors,unsigned long long,c:@S@partition_stat@FI@reads_sectors
+c:@S@partition_stat,requested_writes,requested_writes,unsigned long long,c:@S@partition_stat@FI@requested_writes
+c:@S@partition_stat,writes,writes,unsigned int,c:@S@partition_stat@FI@writes
+c:@S@proc_data_t,n,n,int,c:@S@proc_data_t@FI@n
+c:@S@proc_data_t,nproc,nproc,int,c:@S@proc_data_t@FI@nproc
+c:@S@proc_data_t,ntask,ntask,int,c:@S@proc_data_t@FI@ntask
+c:@S@proc_data_t,proc,proc,proc_t **,c:@S@proc_data_t@FI@proc
+c:@S@proc_data_t,tab,tab,proc_t **,c:@S@proc_data_t@FI@tab
+c:@S@proc_data_t,task,task,proc_t **,c:@S@proc_data_t@FI@task
+c:@S@proc_t,_sigpnd,_sigpnd,char [18],c:@S@proc_t@FI@_sigpnd
+c:@S@proc_t,alarm,alarm,long,c:@S@proc_t@FI@alarm
+c:@S@proc_t,blocked,blocked,char [18],c:@S@proc_t@FI@blocked
+c:@S@proc_t,cgname,cgname,char *,c:@S@proc_t@FI@cgname
+c:@S@proc_t,cgroup,cgroup,char **,c:@S@proc_t@FI@cgroup
+c:@S@proc_t,cmaj_flt,cmaj_flt,unsigned long,c:@S@proc_t@FI@cmaj_flt
+c:@S@proc_t,cmd,cmd,char [16],c:@S@proc_t@FI@cmd
+c:@S@proc_t,cmdline,cmdline,char **,c:@S@proc_t@FI@cmdline
+c:@S@proc_t,cmin_flt,cmin_flt,unsigned long,c:@S@proc_t@FI@cmin_flt
+c:@S@proc_t,cstime,cstime,unsigned long long,c:@S@proc_t@FI@cstime
+c:@S@proc_t,cutime,cutime,unsigned long long,c:@S@proc_t@FI@cutime
+c:@S@proc_t,drs,drs,long,c:@S@proc_t@FI@drs
+c:@S@proc_t,dt,dt,long,c:@S@proc_t@FI@dt
+c:@S@proc_t,egid,egid,int,c:@S@proc_t@FI@egid
+c:@S@proc_t,egroup,egroup,char [33],c:@S@proc_t@FI@egroup
+c:@S@proc_t,end_code,end_code,unsigned long,c:@S@proc_t@FI@end_code
+c:@S@proc_t,environ,environ,char **,c:@S@proc_t@FI@environ
+c:@S@proc_t,euid,euid,int,c:@S@proc_t@FI@euid
+c:@S@proc_t,euser,euser,char [33],c:@S@proc_t@FI@euser
+c:@S@proc_t,exit_signal,exit_signal,int,c:@S@proc_t@FI@exit_signal
+c:@S@proc_t,fgid,fgid,int,c:@S@proc_t@FI@fgid
+c:@S@proc_t,fgroup,fgroup,char [33],c:@S@proc_t@FI@fgroup
+c:@S@proc_t,flags,flags,unsigned long,c:@S@proc_t@FI@flags
+c:@S@proc_t,fuid,fuid,int,c:@S@proc_t@FI@fuid
+c:@S@proc_t,fuser,fuser,char [33],c:@S@proc_t@FI@fuser
+c:@S@proc_t,kstk_eip,kstk_eip,unsigned long,c:@S@proc_t@FI@kstk_eip
+c:@S@proc_t,kstk_esp,kstk_esp,unsigned long,c:@S@proc_t@FI@kstk_esp
+c:@S@proc_t,lrs,lrs,long,c:@S@proc_t@FI@lrs
+c:@S@proc_t,lxcname,lxcname,const char *,c:@S@proc_t@FI@lxcname
+c:@S@proc_t,maj_delta,maj_delta,unsigned long,c:@S@proc_t@FI@maj_delta
+c:@S@proc_t,maj_flt,maj_flt,unsigned long,c:@S@proc_t@FI@maj_flt
+c:@S@proc_t,min_delta,min_delta,unsigned long,c:@S@proc_t@FI@min_delta
+c:@S@proc_t,min_flt,min_flt,unsigned long,c:@S@proc_t@FI@min_flt
+c:@S@proc_t,next,next,struct proc_t *,c:@S@proc_t@FI@next
+c:@S@proc_t,nice,nice,long,c:@S@proc_t@FI@nice
+c:@S@proc_t,nlwp,nlwp,int,c:@S@proc_t@FI@nlwp
+c:@S@proc_t,ns,ns,long [6],c:@S@proc_t@FI@ns
+c:@S@proc_t,oom_adj,oom_adj,int,c:@S@proc_t@FI@oom_adj
+c:@S@proc_t,oom_score,oom_score,int,c:@S@proc_t@FI@oom_score
+c:@S@proc_t,pad_1,pad_1,char,c:@S@proc_t@FI@pad_1
+c:@S@proc_t,pad_2,pad_2,char,c:@S@proc_t@FI@pad_2
+c:@S@proc_t,pad_3,pad_3,char,c:@S@proc_t@FI@pad_3
+c:@S@proc_t,pcpu,pcpu,unsigned int,c:@S@proc_t@FI@pcpu
+c:@S@proc_t,pgrp,pgrp,int,c:@S@proc_t@FI@pgrp
+c:@S@proc_t,ppid,ppid,int,c:@S@proc_t@FI@ppid
+c:@S@proc_t,priority,priority,long,c:@S@proc_t@FI@priority
+c:@S@proc_t,processor,processor,int,c:@S@proc_t@FI@processor
+c:@S@proc_t,resident,resident,long,c:@S@proc_t@FI@resident
+c:@S@proc_t,rgid,rgid,int,c:@S@proc_t@FI@rgid
+c:@S@proc_t,rgroup,rgroup,char [33],c:@S@proc_t@FI@rgroup
+c:@S@proc_t,ring,ring,struct proc_t *,c:@S@proc_t@FI@ring
+c:@S@proc_t,rss,rss,long,c:@S@proc_t@FI@rss
+c:@S@proc_t,rss_rlim,rss_rlim,unsigned long,c:@S@proc_t@FI@rss_rlim
+c:@S@proc_t,rtprio,rtprio,unsigned long,c:@S@proc_t@FI@rtprio
+c:@S@proc_t,ruid,ruid,int,c:@S@proc_t@FI@ruid
+c:@S@proc_t,ruser,ruser,char [33],c:@S@proc_t@FI@ruser
+c:@S@proc_t,sched,sched,unsigned long,c:@S@proc_t@FI@sched
+c:@S@proc_t,sd_mach,sd_mach,char *,c:@S@proc_t@FI@sd_mach
+c:@S@proc_t,sd_ouid,sd_ouid,char *,c:@S@proc_t@FI@sd_ouid
+c:@S@proc_t,sd_seat,sd_seat,char *,c:@S@proc_t@FI@sd_seat
+c:@S@proc_t,sd_sess,sd_sess,char *,c:@S@proc_t@FI@sd_sess
+c:@S@proc_t,sd_slice,sd_slice,char *,c:@S@proc_t@FI@sd_slice
+c:@S@proc_t,sd_unit,sd_unit,char *,c:@S@proc_t@FI@sd_unit
+c:@S@proc_t,sd_uunit,sd_uunit,char *,c:@S@proc_t@FI@sd_uunit
+c:@S@proc_t,session,session,int,c:@S@proc_t@FI@session
+c:@S@proc_t,sgid,sgid,int,c:@S@proc_t@FI@sgid
+c:@S@proc_t,sgroup,sgroup,char [33],c:@S@proc_t@FI@sgroup
+c:@S@proc_t,share,share,long,c:@S@proc_t@FI@share
+c:@S@proc_t,sigcatch,sigcatch,char [18],c:@S@proc_t@FI@sigcatch
+c:@S@proc_t,sigignore,sigignore,char [18],c:@S@proc_t@FI@sigignore
+c:@S@proc_t,signal,signal,char [18],c:@S@proc_t@FI@signal
+c:@S@proc_t,size,size,long,c:@S@proc_t@FI@size
+c:@S@proc_t,start_code,start_code,unsigned long,c:@S@proc_t@FI@start_code
+c:@S@proc_t,start_stack,start_stack,unsigned long,c:@S@proc_t@FI@start_stack
+c:@S@proc_t,start_time,start_time,unsigned long long,c:@S@proc_t@FI@start_time
+c:@S@proc_t,state,state,char,c:@S@proc_t@FI@state
+c:@S@proc_t,stime,stime,unsigned long long,c:@S@proc_t@FI@stime
+c:@S@proc_t,suid,suid,int,c:@S@proc_t@FI@suid
+c:@S@proc_t,supgid,supgid,char *,c:@S@proc_t@FI@supgid
+c:@S@proc_t,supgrp,supgrp,char *,c:@S@proc_t@FI@supgrp
+c:@S@proc_t,suser,suser,char [33],c:@S@proc_t@FI@suser
+c:@S@proc_t,tgid,tgid,int,c:@S@proc_t@FI@tgid
+c:@S@proc_t,tid,tid,int,c:@S@proc_t@FI@tid
+c:@S@proc_t,tpgid,tpgid,int,c:@S@proc_t@FI@tpgid
+c:@S@proc_t,trs,trs,long,c:@S@proc_t@FI@trs
+c:@S@proc_t,tty,tty,int,c:@S@proc_t@FI@tty
+c:@S@proc_t,utime,utime,unsigned long long,c:@S@proc_t@FI@utime
+c:@S@proc_t,vm_data,vm_data,unsigned long,c:@S@proc_t@FI@vm_data
+c:@S@proc_t,vm_exe,vm_exe,unsigned long,c:@S@proc_t@FI@vm_exe
+c:@S@proc_t,vm_lib,vm_lib,unsigned long,c:@S@proc_t@FI@vm_lib
+c:@S@proc_t,vm_lock,vm_lock,unsigned long,c:@S@proc_t@FI@vm_lock
+c:@S@proc_t,vm_rss,vm_rss,unsigned long,c:@S@proc_t@FI@vm_rss
+c:@S@proc_t,vm_rss_anon,vm_rss_anon,unsigned long,c:@S@proc_t@FI@vm_rss_anon
+c:@S@proc_t,vm_rss_file,vm_rss_file,unsigned long,c:@S@proc_t@FI@vm_rss_file
+c:@S@proc_t,vm_rss_shared,vm_rss_shared,unsigned long,c:@S@proc_t@FI@vm_rss_shared
+c:@S@proc_t,vm_size,vm_size,unsigned long,c:@S@proc_t@FI@vm_size
+c:@S@proc_t,vm_stack,vm_stack,unsigned long,c:@S@proc_t@FI@vm_stack
+c:@S@proc_t,vm_swap,vm_swap,unsigned long,c:@S@proc_t@FI@vm_swap
+c:@S@proc_t,vsize,vsize,unsigned long,c:@S@proc_t@FI@vsize
+c:@S@proc_t,wchan,wchan,unsigned long,c:@S@proc_t@FI@wchan
+c:@S@slab_cache,active_objs,active_objs,unsigned int,c:@S@slab_cache@FI@active_objs
+c:@S@slab_cache,name,name,char [48],c:@S@slab_cache@FI@name
+c:@S@slab_cache,num_objs,num_objs,unsigned int,c:@S@slab_cache@FI@num_objs
+c:@S@slab_cache,objperslab,objperslab,unsigned int,c:@S@slab_cache@FI@objperslab
+c:@S@slab_cache,objsize,objsize,unsigned int,c:@S@slab_cache@FI@objsize
+c:@S@slab_info,cache_size,cache_size,unsigned long,c:@S@slab_info@FI@cache_size
+c:@S@slab_info,name,name,char [128],c:@S@slab_info@FI@name
+c:@S@slab_info,next,next,struct slab_info *,c:@S@slab_info@FI@next
+c:@S@slab_info,nr_active_objs,nr_active_objs,unsigned int,c:@S@slab_info@FI@nr_active_objs
+c:@S@slab_info,nr_active_slabs,nr_active_slabs,unsigned int,c:@S@slab_info@FI@nr_active_slabs
+c:@S@slab_info,nr_objs,nr_objs,unsigned int,c:@S@slab_info@FI@nr_objs
+c:@S@slab_info,nr_slabs,nr_slabs,unsigned int,c:@S@slab_info@FI@nr_slabs
+c:@S@slab_info,obj_size,obj_size,unsigned int,c:@S@slab_info@FI@obj_size
+c:@S@slab_info,objs_per_slab,objs_per_slab,unsigned int,c:@S@slab_info@FI@objs_per_slab
+c:@S@slab_info,pages_per_slab,pages_per_slab,unsigned int,c:@S@slab_info@FI@pages_per_slab
+c:@S@slab_info,use,use,unsigned int,c:@S@slab_info@FI@use
+c:@S@slab_stat,active_size,active_size,unsigned long,c:@S@slab_stat@FI@active_size
+c:@S@slab_stat,avg_obj_size,avg_obj_size,unsigned int,c:@S@slab_stat@FI@avg_obj_size
+c:@S@slab_stat,max_obj_size,max_obj_size,unsigned int,c:@S@slab_stat@FI@max_obj_size
+c:@S@slab_stat,min_obj_size,min_obj_size,unsigned int,c:@S@slab_stat@FI@min_obj_size
+c:@S@slab_stat,nr_active_caches,nr_active_caches,unsigned int,c:@S@slab_stat@FI@nr_active_caches
+c:@S@slab_stat,nr_active_objs,nr_active_objs,unsigned int,c:@S@slab_stat@FI@nr_active_objs
+c:@S@slab_stat,nr_active_slabs,nr_active_slabs,unsigned int,c:@S@slab_stat@FI@nr_active_slabs
+c:@S@slab_stat,nr_caches,nr_caches,unsigned int,c:@S@slab_stat@FI@nr_caches
+c:@S@slab_stat,nr_objs,nr_objs,unsigned int,c:@S@slab_stat@FI@nr_objs
+c:@S@slab_stat,nr_pages,nr_pages,unsigned int,c:@S@slab_stat@FI@nr_pages
+c:@S@slab_stat,nr_slabs,nr_slabs,unsigned int,c:@S@slab_stat@FI@nr_slabs
+c:@S@slab_stat,total_size,total_size,unsigned long,c:@S@slab_stat@FI@total_size

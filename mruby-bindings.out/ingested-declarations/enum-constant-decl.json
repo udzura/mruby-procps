@@ -1,0 +1,7 @@
+{ "file": "procps/build/include/proc/readproc.h", "line": "35", "kind": "EnumConstantDecl", "name": "IPCNS", "value": 0, "member_of": "c:@E@ns_type", "usr": "c:@E@ns_type@IPCNS" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "36", "kind": "EnumConstantDecl", "name": "MNTNS", "value": 1, "member_of": "c:@E@ns_type", "usr": "c:@E@ns_type@MNTNS" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "37", "kind": "EnumConstantDecl", "name": "NETNS", "value": 2, "member_of": "c:@E@ns_type", "usr": "c:@E@ns_type@NETNS" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "38", "kind": "EnumConstantDecl", "name": "PIDNS", "value": 3, "member_of": "c:@E@ns_type", "usr": "c:@E@ns_type@PIDNS" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "39", "kind": "EnumConstantDecl", "name": "USERNS", "value": 4, "member_of": "c:@E@ns_type", "usr": "c:@E@ns_type@USERNS" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "40", "kind": "EnumConstantDecl", "name": "UTSNS", "value": 5, "member_of": "c:@E@ns_type", "usr": "c:@E@ns_type@UTSNS" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "41", "kind": "EnumConstantDecl", "name": "NUM_NS", "value": 6, "member_of": "c:@E@ns_type", "usr": "c:@E@ns_type@NUM_NS" }

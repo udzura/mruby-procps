@@ -1,0 +1,1 @@
+{ "file": "procps/build/include/proc/readproc.h", "line": "34", "kind": "EnumDecl", "name": "enum ns_type", "namespace": "", "usr": "c:@E@ns_type", "type": { "type_name": "enum ns_type", "type_usr": "c:@E@ns_type", "type_is_pointer": false} }

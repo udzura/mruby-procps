@@ -1,0 +1,9 @@
+name,ruby_name,usr
+struct PROCTAB,PROCTAB,c:@S@PROCTAB
+struct disk_stat,DiskStat,c:@S@disk_stat
+struct partition_stat,PartitionStat,c:@S@partition_stat
+struct proc_data_t,ProcData,c:@S@proc_data_t
+struct proc_t,Proc,c:@S@proc_t
+struct slab_cache,SlabCache,c:@S@slab_cache
+struct slab_info,SlabInfo,c:@S@slab_info
+struct slab_stat,SlabStat,c:@S@slab_stat

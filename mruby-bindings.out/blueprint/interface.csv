@@ -1,0 +1,47 @@
+count,type,preferred_type_name,preferred_pointee_type,canonical_type,canonical_pointee_type,plan
+27,int,int,,int,,BUILTIN_CTYPE
+13,void,void,,void,,BUILTIN_CTYPE
+12,unsigned int,unsigned int,,unsigned int,,BUILTIN_CTYPE
+8,jiff *restrict,jiff *restrict,,jiff *restrict,,VOID_PTR
+7,proc_t *,proc_t *,proc_t,struct proc_t *,struct proc_t,PTR_TO_KNOWN_VALUE_TYPE
+6,unsigned int *restrict,unsigned int *restrict,,unsigned int *restrict,,VOID_PTR
+5,PROCTAB *const restrict,PROCTAB *const restrict,,PROCTAB *const restrict,,VOID_PTR
+5,double *,double *,double,double *,double,PTR_TO_UNKNOWN_VALUE_TYPE
+5,char *,char *,char,char *,char,PTR_TO_UNKNOWN_VALUE_TYPE
+5,const char *,char *,char,char *,char,PTR_TO_UNKNOWN_VALUE_TYPE
+4,int *,int *,int,int *,int,PTR_TO_UNKNOWN_VALUE_TYPE
+4,void *,void *,void,void *,void,PTR_TO_UNKNOWN_VALUE_TYPE
+4,char *restrict,char *restrict,,char *restrict,,VOID_PTR
+4,unsigned long *restrict,unsigned long *restrict,,unsigned long *restrict,,VOID_PTR
+4,const char *restrict,char *restrict,,char *restrict,,VOID_PTR
+3,int (*)(proc_t *),int (*)(proc_t *),,int (*)(proc_t *),,FUNCTION_PTR
+3,proc_t *restrict,proc_t *restrict,,proc_t *restrict,,VOID_PTR
+2,const proc_t *const restrict,proc_t *const restrict,,proc_t *const restrict,,VOID_PTR
+2,char *const restrict,char *const restrict,,char *const restrict,,VOID_PTR
+2,PROCTAB *,PROCTAB *,PROCTAB,struct PROCTAB *,struct PROCTAB,PTR_TO_KNOWN_VALUE_TYPE
+2,proc_data_t *,proc_data_t *,proc_data_t,struct proc_data_t *,struct proc_data_t,PTR_TO_KNOWN_VALUE_TYPE
+2,struct slab_info *,struct slab_info *,struct slab_info,struct slab_info *,struct slab_info,PTR_TO_KNOWN_VALUE_TYPE
+1,pid_t,pid_t,,pid_t,,UNKNOWN_VALUE_TYPE
+1,size_t,size_t,,size_t,,BUILTIN_CTYPE
+1,struct slab_stat *,struct slab_stat *,struct slab_stat,struct slab_stat *,struct slab_stat,PTR_TO_KNOWN_VALUE_TYPE
+1,uid_t,uid_t,,uid_t,,UNKNOWN_VALUE_TYPE
+1,gid_t,gid_t,,gid_t,,UNKNOWN_VALUE_TYPE
+1,dev_t,dev_t,,dev_t,,UNKNOWN_VALUE_TYPE
+1,unsigned long,unsigned long,,unsigned long,,BUILTIN_CTYPE
+1,const char *const restrict *restrict,char *const restrict *restrict,,char *const restrict *restrict,,VOID_PTR
+1,const char *const restrict,char *const restrict,,char *const restrict,,VOID_PTR
+1,proc_t **,proc_t **,,proc_t **,,VOID_PTR
+1,struct disk_stat *,struct disk_stat *,disk_stat,struct disk_stat *,struct disk_stat,PTR_TO_KNOWN_VALUE_TYPE
+1,struct disk_stat **,struct disk_stat **,,struct disk_stat **,,VOID_PTR
+1,struct partition_stat **,struct partition_stat **,,struct partition_stat **,,VOID_PTR
+1,struct slab_cache **,struct slab_cache **,,struct slab_cache **,,VOID_PTR
+1,char *const restrict *restrict,char *const restrict *restrict,,char *const restrict *restrict,,VOID_PTR
+1,struct slab_info **,struct slab_info **,,struct slab_info **,,VOID_PTR
+0,struct proc_t,proc_t,,struct proc_t,,KNOWN_VALUE_TYPE
+0,struct disk_stat,disk_stat,,struct disk_stat,,KNOWN_VALUE_TYPE
+0,struct slab_cache,slab_cache,,struct slab_cache,,KNOWN_VALUE_TYPE
+0,struct slab_stat,struct slab_stat,,struct slab_stat,,KNOWN_VALUE_TYPE
+0,struct partition_stat,partition_stat,,struct partition_stat,,KNOWN_VALUE_TYPE
+0,struct slab_info,struct slab_info,,struct slab_info,,KNOWN_VALUE_TYPE
+0,struct proc_data_t,proc_data_t,,struct proc_data_t,,KNOWN_VALUE_TYPE
+0,struct PROCTAB,PROCTAB,,struct PROCTAB,,KNOWN_VALUE_TYPE

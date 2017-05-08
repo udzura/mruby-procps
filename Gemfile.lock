@@ -1,0 +1,17 @@
+PATH
+  remote: ./mruby-bindings
+  specs:
+    mruby-bindings (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  mruby-bindings!
+
+BUNDLED WITH
+   1.13.7

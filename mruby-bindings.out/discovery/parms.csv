@@ -1,0 +1,96 @@
+function,name,type
+xcalloc,size,unsigned int
+xmalloc,size,int
+xrealloc,oldp,void *
+xrealloc,size,unsigned int
+xstrdup,str,const char *
+dev_to_tty,ret,char *restrict
+dev_to_tty,chop,unsigned int
+dev_to_tty,dev_t_dev,dev_t
+dev_to_tty,pid,int
+dev_to_tty,flags,unsigned int
+tty_to_dev,name,const char *const restrict
+escape_strlist,dst,char *restrict
+escape_strlist,src,char *const restrict *restrict
+escape_strlist,n,size_t
+escape_strlist,cells,int *
+escape_str,dst,char *restrict
+escape_str,src,const char *restrict
+escape_str,bufsize,int
+escape_str,maxcells,int *
+escape_command,outbuf,char *const restrict
+escape_command,pp,const proc_t *const restrict
+escape_command,bytes,int
+escape_command,cells,int *
+escape_command,flags,unsigned int
+escaped_copy,dst,char *restrict
+escaped_copy,src,const char *restrict
+escaped_copy,bufsize,int
+escaped_copy,maxroom,int *
+pwcache_get_user,uid,uid_t
+pwcache_get_group,gid,gid_t
+get_ns_name,id,int
+get_ns_id,name,const char *
+openproc,flags,int
+readproctab2,want_proc,int (*)(proc_t *)
+readproctab2,want_task,int (*)(proc_t *)
+readproctab2,PT,PROCTAB *const restrict
+readproctab3,want_task,int (*)(proc_t *)
+readproctab3,PT,PROCTAB *const restrict
+readproctab,flags,int
+closeproc,PT,PROCTAB *
+readproc,PT,PROCTAB *const restrict
+readproc,p,proc_t *restrict
+readtask,PT,PROCTAB *const restrict
+readtask,p,const proc_t *const restrict
+readtask,t,proc_t *restrict
+readeither,PT,PROCTAB *const restrict
+readeither,x,proc_t *restrict
+read_cmdline,dst,char *const restrict
+read_cmdline,sz,unsigned int
+read_cmdline,pid,unsigned int
+look_up_our_self,p,proc_t *
+freeproc,p,proc_t *
+get_proc_stats,pid,pid_t
+get_proc_stats,p,proc_t *
+signal_name_to_number,name,const char *restrict
+signal_number_to_name,signo,int
+print_given_signals,argc,int
+print_given_signals,argv,const char *const restrict *restrict
+print_given_signals,max_line,int
+strtosig,s,const char *restrict
+put_slabinfo,"",struct slab_info *
+free_slabinfo,"",struct slab_info *
+get_slabinfo,"",struct slab_info **
+get_slabinfo,"",struct slab_stat *
+uptime,uptime_secs,double *
+uptime,idle_secs,double *
+loadavg,av1,double *
+loadavg,av5,double *
+loadavg,av15,double *
+getstat,cuse,jiff *restrict
+getstat,cice,jiff *restrict
+getstat,csys,jiff *restrict
+getstat,cide,jiff *restrict
+getstat,ciow,jiff *restrict
+getstat,cxxx,jiff *restrict
+getstat,cyyy,jiff *restrict
+getstat,czzz,jiff *restrict
+getstat,pin,unsigned long *restrict
+getstat,pout,unsigned long *restrict
+getstat,s_in,unsigned long *restrict
+getstat,sout,unsigned long *restrict
+getstat,intr,unsigned int *restrict
+getstat,ctxt,unsigned int *restrict
+getstat,running,unsigned int *restrict
+getstat,blocked,unsigned int *restrict
+getstat,btime,unsigned int *restrict
+getstat,processes,unsigned int *restrict
+getpartitions_num,disks,struct disk_stat *
+getpartitions_num,ndisks,int
+getdiskstat,"",struct disk_stat **
+getdiskstat,"",struct partition_stat **
+getslabinfo,"",struct slab_cache **
+lookup_wchan,pid,int
+print_uptime,human_readable,int
+sprint_uptime,human_readable,int

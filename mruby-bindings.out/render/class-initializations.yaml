@@ -1,0 +1,50 @@
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: ".pointer"
+body: 'mruby_Procps_Pointer_init(mrb);
+
+'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: ".voidpointer"
+body: 'mruby_Procps_VoidPointer_init(mrb);
+
+'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: DiskStat
+body: 'mruby_Procps_DiskStat_init(mrb);
+
+'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: PROCTAB
+body: 'mruby_Procps_PROCTAB_init(mrb);
+
+'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: PartitionStat
+body: 'mruby_Procps_PartitionStat_init(mrb);
+
+'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: Proc
+body: 'mruby_Procps_Proc_init(mrb);
+
+'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: ProcData
+body: 'mruby_Procps_ProcData_init(mrb);
+
+'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: SlabCache
+body: 'mruby_Procps_SlabCache_init(mrb);
+
+'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: SlabInfo
+body: 'mruby_Procps_SlabInfo_init(mrb);
+
+'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: SlabStat
+body: 'mruby_Procps_SlabStat_init(mrb);
+
+'

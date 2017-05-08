@@ -1,0 +1,43 @@
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: ".module"
+body: '#define Procps_module(mrb) mrb_module_get(mrb, "Procps")'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: ".pointer"
+body: '#define Procps_Pointer_module(mrb) mrb_module_get_under(mrb, Procps_module(mrb),
+  "Pointer")'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: ".voidpointer"
+body: '#define Procps_VoidPointer_class(mrb) mrb_class_get_under(mrb, Procps_module(mrb),
+  "VoidPointer")'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: PROCTAB
+body: '#define Procps_PROCTAB_class(mrb) mrb_class_get_under(mrb, Procps_module(mrb),
+  "PROCTAB")'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: DiskStat
+body: '#define Procps_DiskStat_class(mrb) mrb_class_get_under(mrb, Procps_module(mrb),
+  "DiskStat")'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: PartitionStat
+body: '#define Procps_PartitionStat_class(mrb) mrb_class_get_under(mrb, Procps_module(mrb),
+  "PartitionStat")'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: ProcData
+body: '#define Procps_ProcData_class(mrb) mrb_class_get_under(mrb, Procps_module(mrb),
+  "ProcData")'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: Proc
+body: '#define Procps_Proc_class(mrb) mrb_class_get_under(mrb, Procps_module(mrb),
+  "Proc")'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: SlabCache
+body: '#define Procps_SlabCache_class(mrb) mrb_class_get_under(mrb, Procps_module(mrb),
+  "SlabCache")'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: SlabInfo
+body: '#define Procps_SlabInfo_class(mrb) mrb_class_get_under(mrb, Procps_module(mrb),
+  "SlabInfo")'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: SlabStat
+body: '#define Procps_SlabStat_class(mrb) mrb_class_get_under(mrb, Procps_module(mrb),
+  "SlabStat")'

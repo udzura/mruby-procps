@@ -1,0 +1,42 @@
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: IPCNS
+body: 'mrb_const_set(mrb, mrb_obj_value(Procps_module(mrb)), mrb_intern_lit(mrb, "IPCNS"),
+  mrb_fixnum_value(IPCNS));
+
+'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: MNTNS
+body: 'mrb_const_set(mrb, mrb_obj_value(Procps_module(mrb)), mrb_intern_lit(mrb, "MNTNS"),
+  mrb_fixnum_value(MNTNS));
+
+'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: NETNS
+body: 'mrb_const_set(mrb, mrb_obj_value(Procps_module(mrb)), mrb_intern_lit(mrb, "NETNS"),
+  mrb_fixnum_value(NETNS));
+
+'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: NUM_NS
+body: 'mrb_const_set(mrb, mrb_obj_value(Procps_module(mrb)), mrb_intern_lit(mrb, "NUM_NS"),
+  mrb_fixnum_value(NUM_NS));
+
+'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: PIDNS
+body: 'mrb_const_set(mrb, mrb_obj_value(Procps_module(mrb)), mrb_intern_lit(mrb, "PIDNS"),
+  mrb_fixnum_value(PIDNS));
+
+'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: USERNS
+body: 'mrb_const_set(mrb, mrb_obj_value(Procps_module(mrb)), mrb_intern_lit(mrb, "USERNS"),
+  mrb_fixnum_value(USERNS));
+
+'
+--- !ruby/object:MRuby::Bindings::RenderedText
+id: UTSNS
+body: 'mrb_const_set(mrb, mrb_obj_value(Procps_module(mrb)), mrb_intern_lit(mrb, "UTSNS"),
+  mrb_fixnum_value(UTSNS));
+
+'

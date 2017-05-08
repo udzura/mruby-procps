@@ -1,0 +1,69 @@
+{ "file": "procps/build/include/proc/alloc.h", "line": "2", "kind": "MacroDefinition", "name": "PROCPS_PROC_ALLOC_H", "text": "PROCPS_PROC_ALLOC_H" }
+{ "file": "procps/build/include/proc/devname.h", "line": "2", "kind": "MacroDefinition", "name": "PROC_DEVNAME_H", "text": "PROC_DEVNAME_H" }
+{ "file": "procps/build/include/proc/devname.h", "line": "9", "kind": "MacroDefinition", "name": "ABBREV_DEV", "text": "ABBREV_DEV  1" }
+{ "file": "procps/build/include/proc/devname.h", "line": "10", "kind": "MacroDefinition", "name": "ABBREV_TTY", "text": "ABBREV_TTY  2" }
+{ "file": "procps/build/include/proc/devname.h", "line": "11", "kind": "MacroDefinition", "name": "ABBREV_PTS", "text": "ABBREV_PTS  4" }
+{ "file": "procps/build/include/proc/escape.h", "line": "2", "kind": "MacroDefinition", "name": "PROCPS_PROC_ESCAPE_H", "text": "PROCPS_PROC_ESCAPE_H" }
+{ "file": "procps/build/include/proc/escape.h", "line": "11", "kind": "MacroDefinition", "name": "ESC_STRETCH", "text": "ESC_STRETCH 1" }
+{ "file": "procps/build/include/proc/escape.h", "line": "13", "kind": "MacroDefinition", "name": "ESC_ARGS", "text": "ESC_ARGS     0x1" }
+{ "file": "procps/build/include/proc/escape.h", "line": "14", "kind": "MacroDefinition", "name": "ESC_BRACKETS", "text": "ESC_BRACKETS 0x2" }
+{ "file": "procps/build/include/proc/escape.h", "line": "15", "kind": "MacroDefinition", "name": "ESC_DEFUNCT", "text": "ESC_DEFUNCT  0x4" }
+{ "file": "procps/build/include/proc/procps.h", "line": "2", "kind": "MacroDefinition", "name": "PROCPS_PROC_PROCPS_H", "text": "PROCPS_PROC_PROCPS_H" }
+{ "file": "procps/build/include/proc/procps.h", "line": "8", "kind": "MacroDefinition", "name": "EXTERN_C_BEGIN", "text": "EXTERN_C_BEGIN" }
+{ "file": "procps/build/include/proc/procps.h", "line": "9", "kind": "MacroDefinition", "name": "EXTERN_C_END", "text": "EXTERN_C_END" }
+{ "file": "procps/build/include/proc/procps.h", "line": "39", "kind": "MacroDefinition", "name": "KLONG", "text": "KLONG long" }
+{ "file": "procps/build/include/proc/procps.h", "line": "40", "kind": "MacroDefinition", "name": "KLF", "text": "KLF \"l\"" }
+{ "file": "procps/build/include/proc/procps.h", "line": "41", "kind": "MacroDefinition", "name": "STRTOUKL", "text": "STRTOUKL strtoul" }
+{ "file": "procps/build/include/proc/procps.h", "line": "45", "kind": "MacroDefinition", "name": "NORETURN", "text": "NORETURN __attribute__((__noreturn__))" }
+{ "file": "procps/build/include/proc/procps.h", "line": "46", "kind": "MacroDefinition", "name": "FUNCTION", "text": "FUNCTION __attribute__((__const__))" }
+{ "file": "procps/build/include/proc/procps.h", "line": "50", "kind": "MacroDefinition", "name": "MALLOC", "text": "MALLOC __attribute__ ((__malloc__))" }
+{ "file": "procps/build/include/proc/procps.h", "line": "52", "kind": "MacroDefinition", "name": "PURE", "text": "PURE __attribute__ ((__pure__))" }
+{ "file": "procps/build/include/proc/procps.h", "line": "54", "kind": "MacroDefinition", "name": "likely", "text": "likely(x)       __builtin_expect(!!(x),1)" }
+{ "file": "procps/build/include/proc/procps.h", "line": "55", "kind": "MacroDefinition", "name": "unlikely", "text": "unlikely(x)     __builtin_expect(!!(x),0)" }
+{ "file": "procps/build/include/proc/procps.h", "line": "56", "kind": "MacroDefinition", "name": "expected", "text": "expected(x,y)   __builtin_expect((x),(y))" }
+{ "file": "procps/build/include/proc/procps.h", "line": "71", "kind": "MacroDefinition", "name": "STRINGIFY_ARG", "text": "STRINGIFY_ARG(a)\t#a" }
+{ "file": "procps/build/include/proc/procps.h", "line": "72", "kind": "MacroDefinition", "name": "STRINGIFY", "text": "STRINGIFY(a)\t\tSTRINGIFY_ARG(a)" }
+{ "file": "procps/build/include/proc/procps.h", "line": "76", "kind": "MacroDefinition", "name": "OBSOLETE", "text": "OBSOLETE __attribute__((deprecated))" }
+{ "file": "procps/build/include/proc/procps.h", "line": "85", "kind": "MacroDefinition", "name": "HIDDEN_ALIAS", "text": "HIDDEN_ALIAS(x) extern __typeof(x) x##_direct __attribute__((alias(#x),visibility(\"hidden\")))" }
+{ "file": "procps/build/include/proc/pwcache.h", "line": "2", "kind": "MacroDefinition", "name": "PROCPS_PROC_PWCACHE_H", "text": "PROCPS_PROC_PWCACHE_H" }
+{ "file": "procps/build/include/proc/pwcache.h", "line": "10", "kind": "MacroDefinition", "name": "P_G_SZ", "text": "P_G_SZ 33" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "2", "kind": "MacroDefinition", "name": "PROCPS_PROC_READPROC_H", "text": "PROCPS_PROC_READPROC_H" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "16", "kind": "MacroDefinition", "name": "SIGNAL_STRING", "text": "SIGNAL_STRING" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "32", "kind": "MacroDefinition", "name": "XXXID", "text": "XXXID tid" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "196", "kind": "MacroDefinition", "name": "PROCPATHLEN", "text": "PROCPATHLEN 64" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "283", "kind": "MacroDefinition", "name": "PROC_FILLMEM", "text": "PROC_FILLMEM         0x0001" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "284", "kind": "MacroDefinition", "name": "PROC_FILLCOM", "text": "PROC_FILLCOM         0x0002" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "285", "kind": "MacroDefinition", "name": "PROC_FILLENV", "text": "PROC_FILLENV         0x0004" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "286", "kind": "MacroDefinition", "name": "PROC_FILLUSR", "text": "PROC_FILLUSR         0x0008" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "287", "kind": "MacroDefinition", "name": "PROC_FILLGRP", "text": "PROC_FILLGRP         0x0010" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "288", "kind": "MacroDefinition", "name": "PROC_FILLSTATUS", "text": "PROC_FILLSTATUS      0x0020" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "289", "kind": "MacroDefinition", "name": "PROC_FILLSTAT", "text": "PROC_FILLSTAT        0x0040" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "290", "kind": "MacroDefinition", "name": "PROC_FILLARG", "text": "PROC_FILLARG         0x0100" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "291", "kind": "MacroDefinition", "name": "PROC_FILLCGROUP", "text": "PROC_FILLCGROUP      0x0200" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "292", "kind": "MacroDefinition", "name": "PROC_FILLSUPGRP", "text": "PROC_FILLSUPGRP      0x0400" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "293", "kind": "MacroDefinition", "name": "PROC_FILLOOM", "text": "PROC_FILLOOM         0x0800" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "294", "kind": "MacroDefinition", "name": "PROC_FILLNS", "text": "PROC_FILLNS          0x8000" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "295", "kind": "MacroDefinition", "name": "PROC_FILLSYSTEMD", "text": "PROC_FILLSYSTEMD    0x80000" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "296", "kind": "MacroDefinition", "name": "PROC_FILL_LXC", "text": "PROC_FILL_LXC      0x800000" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "298", "kind": "MacroDefinition", "name": "PROC_LOOSE_TASKS", "text": "PROC_LOOSE_TASKS     0x2000" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "301", "kind": "MacroDefinition", "name": "PROC_PID", "text": "PROC_PID             0x1000" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "302", "kind": "MacroDefinition", "name": "PROC_UID", "text": "PROC_UID             0x4000" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "304", "kind": "MacroDefinition", "name": "PROC_EDITCGRPCVT", "text": "PROC_EDITCGRPCVT    0x10000" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "305", "kind": "MacroDefinition", "name": "PROC_EDITCMDLCVT", "text": "PROC_EDITCMDLCVT    0x20000" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "306", "kind": "MacroDefinition", "name": "PROC_EDITENVRCVT", "text": "PROC_EDITENVRCVT    0x40000" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "309", "kind": "MacroDefinition", "name": "PROC_SPARE_1", "text": "PROC_SPARE_1     0x01000000" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "310", "kind": "MacroDefinition", "name": "PROC_SPARE_2", "text": "PROC_SPARE_2     0x02000000" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "311", "kind": "MacroDefinition", "name": "PROC_SPARE_3", "text": "PROC_SPARE_3     0x04000000" }
+{ "file": "procps/build/include/proc/readproc.h", "line": "312", "kind": "MacroDefinition", "name": "PROC_SPARE_4", "text": "PROC_SPARE_4     0x08000000" }
+{ "file": "procps/build/include/proc/sig.h", "line": "2", "kind": "MacroDefinition", "name": "PROC_SIG_H", "text": "PROC_SIG_H" }
+{ "file": "procps/build/include/proc/slab.h", "line": "2", "kind": "MacroDefinition", "name": "_PROC_SLAB_H", "text": "_PROC_SLAB_H" }
+{ "file": "procps/build/include/proc/slab.h", "line": "4", "kind": "MacroDefinition", "name": "SLAB_INFO_NAME_LEN", "text": "SLAB_INFO_NAME_LEN      128" }
+{ "file": "procps/build/include/proc/sysinfo.h", "line": "2", "kind": "MacroDefinition", "name": "PROC_SYSINFO_H", "text": "PROC_SYSINFO_H" }
+{ "file": "procps/build/include/proc/sysinfo.h", "line": "59", "kind": "MacroDefinition", "name": "BUFFSIZE", "text": "BUFFSIZE (64*1024)" }
+{ "file": "procps/build/include/proc/version.h", "line": "24", "kind": "MacroDefinition", "name": "PROC_VERSION_H", "text": "PROC_VERSION_H" }
+{ "file": "procps/build/include/proc/version.h", "line": "33", "kind": "MacroDefinition", "name": "LINUX_VERSION", "text": "LINUX_VERSION(x,y,z)   (0x10000*(x) + 0x100*(y) + z)" }
+{ "file": "procps/build/include/proc/version.h", "line": "34", "kind": "MacroDefinition", "name": "LINUX_VERSION_MAJOR", "text": "LINUX_VERSION_MAJOR(x) (((x)>>16) & 0xFF)" }
+{ "file": "procps/build/include/proc/version.h", "line": "35", "kind": "MacroDefinition", "name": "LINUX_VERSION_MINOR", "text": "LINUX_VERSION_MINOR(x) (((x)>> 8) & 0xFF)" }
+{ "file": "procps/build/include/proc/version.h", "line": "36", "kind": "MacroDefinition", "name": "LINUX_VERSION_PATCH", "text": "LINUX_VERSION_PATCH(x) ( (x)      & 0xFF)" }
+{ "file": "procps/build/include/proc/wchan.h", "line": "2", "kind": "MacroDefinition", "name": "PROCPS_PROC_WCHAN_H", "text": "PROCPS_PROC_WCHAN_H" }
+{ "file": "procps/build/include/proc/whattime.h", "line": "2", "kind": "MacroDefinition", "name": "PROC_WHATTIME_H", "text": "PROC_WHATTIME_H" }
