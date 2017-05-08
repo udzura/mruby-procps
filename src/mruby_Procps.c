@@ -29,8 +29,6 @@
  * TODO: Include your library here
  */
 
-#include "procps_init.h"
-
 #include "generated/mruby_to_native_ref.h"
 
 #include "generated/mruby_Procps_class_macros.h"
@@ -52,4 +50,3 @@ mrb_mruby_procps_gem_init(mrb_state* mrb)
 void
 mrb_mruby_procps_gem_final(mrb_state* mrb)
 { }
-
