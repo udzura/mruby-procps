@@ -1,0 +1,9 @@
+[submodule "clang2json"]
+	path = clang2json
+	url = ./clang2json
+[submodule "mruby-bindings"]
+	path = mruby-bindings
+	url = ./mruby-bindings
+[submodule "procps"]
+	path = procps
+	url = ./procps
