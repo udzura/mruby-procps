@@ -1,9 +1,9 @@
 [submodule "clang2json"]
 	path = clang2json
-	url = ./clang2json
+	url = https://github.com/jbreeden/clang2json.git
 [submodule "mruby-bindings"]
 	path = mruby-bindings
-	url = ./mruby-bindings
+	url = https://github.com/jbreeden/mruby-bindings.git
 [submodule "procps"]
 	path = procps
-	url = ./procps
+	url = https://gitlab.com/procps-ng/procps.git
