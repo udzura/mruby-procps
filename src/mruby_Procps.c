@@ -38,6 +38,11 @@
 #include "generated/mruby_Procps_classes.c"
 #include "generated/mruby_Procps_functions.c"
 
+/*
+ * Custom funcs
+ */
+#include "custom/extra_functions.c"
+
 void
 mrb_mruby_procps_gem_init(mrb_state* mrb)
 {
@@ -46,6 +51,8 @@ mrb_mruby_procps_gem_init(mrb_state* mrb)
   #include "generated/mruby_Procps_class_initializations.c"
   #include "generated/mruby_Procps_function_initializations.c"
   #include "generated/mruby_Procps_enum_constants.c"
+
+  #include "custom/extra_function_initializations.c"
 }
 
 void
