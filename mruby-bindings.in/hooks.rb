@@ -11,3 +11,5 @@ module MRuby
     end
   end
 end
+
+require_relative 'ctypes'

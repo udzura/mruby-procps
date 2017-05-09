@@ -42,41 +42,32 @@ mruby_Procps_cpuinfo(mrb_state* mrb, mrb_value self)
   return mrb_nil_value();
 }
 
-///**
-// * unsigned int
-// * dev_to_tty(char *restrict ret, unsigned int chop, dev_t dev_t_dev, int pid, unsigned int flags)
-// */
-//#define mruby_Procps_dev_to_tty_FUNCTION
-//mrb_value
-//mruby_Procps_dev_to_tty(mrb_state* mrb, mrb_value self)
-//{
-//
-//  mrb_value boxed_ret;
-//  mrb_int unboxed_chop;
-//  mrb_value boxed_dev_t_dev;
-//  mrb_int unboxed_pid;
-//  mrb_int unboxed_flags;
-//
-//  /* Fetch the args */
-//  mrb_get_args(mrb, "oioii", &boxed_ret, &unboxed_chop, &boxed_dev_t_dev, &unboxed_pid, &unboxed_flags);
-//
-//  /* Type checking */
-//  TODO_type_check_char_PTR_restrict(boxed_ret);
-//  TODO_type_check_dev_t(boxed_dev_t_dev);
-//
-//  /* Unbox params */
-//  char *restrict unboxed_ret = TODO_mruby_unbox_char_PTR_restrict(boxed_ret);
-//
-//  dev_t unboxed_dev_t_dev = TODO_mruby_unbox_dev_t(boxed_dev_t_dev);
-//
-//  /* Invocation */
-//  unsigned int unboxed_return_value = dev_to_tty(unboxed_ret, unboxed_chop, unboxed_dev_t_dev, unboxed_pid, unboxed_flags);
-//
-//  /* Box the return value */
-//  mrb_value boxed_return_value = mrb_fixnum_value(unboxed_return_value);
-//
-//  return boxed_return_value;
-//}
+/**
+ * unsigned int
+ * dev_to_tty(char *restrict ret, unsigned int chop, dev_t dev_t_dev, int pid, unsigned int flags)
+ */
+#define mruby_Procps_dev_to_tty_FUNCTION
+mrb_value
+mruby_Procps_dev_to_tty(mrb_state* mrb, mrb_value self)
+{
+
+  char * unboxed_ret = NULL;
+  mrb_int unboxed_chop;
+  mrb_int unboxed_dev_t_dev;
+  mrb_int unboxed_pid;
+  mrb_int unboxed_flags;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "ziiii", &unboxed_ret, &unboxed_chop, &unboxed_dev_t_dev, &unboxed_pid, &unboxed_flags);
+
+  /* Invocation */
+  unsigned int unboxed_return_value = dev_to_tty(unboxed_ret, unboxed_chop, unboxed_dev_t_dev, unboxed_pid, unboxed_flags);
+
+  /* Box the return value */
+  mrb_value boxed_return_value = mrb_fixnum_value(unboxed_return_value);
+
+  return boxed_return_value;
+}
 
 ///**
 // * int
@@ -119,45 +110,39 @@ mruby_Procps_cpuinfo(mrb_state* mrb, mrb_value self)
 //  return boxed_return_value;
 //}
 
-///**
-// * int
-// * escape_str(char *restrict dst, const char *restrict src, int bufsize, int * maxcells)
-// */
-//#define mruby_Procps_escape_str_FUNCTION
-//mrb_value
-//mruby_Procps_escape_str(mrb_state* mrb, mrb_value self)
-//{
-//
-//  mrb_value boxed_dst;
-//  mrb_value boxed_src;
-//  mrb_int unboxed_bufsize;
-//  mrb_value boxed_maxcells;
-//
-//  /* Fetch the args */
-//  mrb_get_args(mrb, "ooio", &boxed_dst, &boxed_src, &unboxed_bufsize, &boxed_maxcells);
-//
-//  /* Type checking */
-//  TODO_type_check_char_PTR_restrict(boxed_dst);
-//  TODO_type_check_char_PTR_restrict(boxed_src);
-//  if (!mruby_Procps_typecheck_void_pointer(mrb, boxed_maxcells, "int *")) {
-//    return mrb_nil_value();
-//  }
-//
-//  /* Unbox params */
-//  char *restrict unboxed_dst = TODO_mruby_unbox_char_PTR_restrict(boxed_dst);
-//
-//  const char *restrict unboxed_src = TODO_mruby_unbox_char_PTR_restrict(boxed_src);
-//
-//  void * unboxed_maxcells = (mrb_nil_p(boxed_maxcells) ? NULL : mruby_Procps_unbox_void_pointer(mrb, boxed_maxcells));
-//
-//  /* Invocation */
-//  int unboxed_return_value = escape_str(unboxed_dst, unboxed_src, unboxed_bufsize, unboxed_maxcells);
-//
-//  /* Box the return value */
-//  mrb_value boxed_return_value = mrb_fixnum_value(unboxed_return_value);
-//
-//  return boxed_return_value;
-//}
+/**
+ * int
+ * escape_str(char *restrict dst, const char *restrict src, int bufsize, int * maxcells)
+ */
+#define mruby_Procps_escape_str_FUNCTION
+mrb_value
+mruby_Procps_escape_str(mrb_state* mrb, mrb_value self)
+{
+
+  char * unboxed_dst = NULL;
+  char * unboxed_src = NULL;
+  mrb_int unboxed_bufsize;
+  mrb_value boxed_maxcells;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "zzio", &unboxed_dst, &unboxed_src, &unboxed_bufsize, &boxed_maxcells);
+
+  /* Type checking */
+  if (!mruby_Procps_typecheck_void_pointer(mrb, boxed_maxcells, "int *")) {
+    return mrb_nil_value();
+  }
+
+  /* Unbox params */
+  void * unboxed_maxcells = (mrb_nil_p(boxed_maxcells) ? NULL : mruby_Procps_unbox_void_pointer(mrb, boxed_maxcells));
+
+  /* Invocation */
+  int unboxed_return_value = escape_str(unboxed_dst, unboxed_src, unboxed_bufsize, unboxed_maxcells);
+
+  /* Box the return value */
+  mrb_value boxed_return_value = mrb_fixnum_value(unboxed_return_value);
+
+  return boxed_return_value;
+}
 
 ///**
 // * int
@@ -168,24 +153,21 @@ mruby_Procps_cpuinfo(mrb_state* mrb, mrb_value self)
 //mruby_Procps_escape_strlist(mrb_state* mrb, mrb_value self)
 //{
 //
-//  mrb_value boxed_dst;
+//  char * unboxed_dst = NULL;
 //  mrb_value boxed_src;
 //  mrb_int unboxed_n;
 //  mrb_value boxed_cells;
 //
 //  /* Fetch the args */
-//  mrb_get_args(mrb, "ooio", &boxed_dst, &boxed_src, &unboxed_n, &boxed_cells);
+//  mrb_get_args(mrb, "zoio", &unboxed_dst, &boxed_src, &unboxed_n, &boxed_cells);
 //
 //  /* Type checking */
-//  TODO_type_check_char_PTR_restrict(boxed_dst);
 //  TODO_type_check_char_PTR_restrict_PTR_restrict(boxed_src);
 //  if (!mruby_Procps_typecheck_void_pointer(mrb, boxed_cells, "int *")) {
 //    return mrb_nil_value();
 //  }
 //
 //  /* Unbox params */
-//  char *restrict unboxed_dst = TODO_mruby_unbox_char_PTR_restrict(boxed_dst);
-//
 //  char *const restrict *restrict unboxed_src = TODO_mruby_unbox_char_PTR_restrict_PTR_restrict(boxed_src);
 //
 //  void * unboxed_cells = (mrb_nil_p(boxed_cells) ? NULL : mruby_Procps_unbox_void_pointer(mrb, boxed_cells));
@@ -199,45 +181,39 @@ mruby_Procps_cpuinfo(mrb_state* mrb, mrb_value self)
 //  return boxed_return_value;
 //}
 
-///**
-// * int
-// * escaped_copy(char *restrict dst, const char *restrict src, int bufsize, int * maxroom)
-// */
-//#define mruby_Procps_escaped_copy_FUNCTION
-//mrb_value
-//mruby_Procps_escaped_copy(mrb_state* mrb, mrb_value self)
-//{
-//
-//  mrb_value boxed_dst;
-//  mrb_value boxed_src;
-//  mrb_int unboxed_bufsize;
-//  mrb_value boxed_maxroom;
-//
-//  /* Fetch the args */
-//  mrb_get_args(mrb, "ooio", &boxed_dst, &boxed_src, &unboxed_bufsize, &boxed_maxroom);
-//
-//  /* Type checking */
-//  TODO_type_check_char_PTR_restrict(boxed_dst);
-//  TODO_type_check_char_PTR_restrict(boxed_src);
-//  if (!mruby_Procps_typecheck_void_pointer(mrb, boxed_maxroom, "int *")) {
-//    return mrb_nil_value();
-//  }
-//
-//  /* Unbox params */
-//  char *restrict unboxed_dst = TODO_mruby_unbox_char_PTR_restrict(boxed_dst);
-//
-//  const char *restrict unboxed_src = TODO_mruby_unbox_char_PTR_restrict(boxed_src);
-//
-//  void * unboxed_maxroom = (mrb_nil_p(boxed_maxroom) ? NULL : mruby_Procps_unbox_void_pointer(mrb, boxed_maxroom));
-//
-//  /* Invocation */
-//  int unboxed_return_value = escaped_copy(unboxed_dst, unboxed_src, unboxed_bufsize, unboxed_maxroom);
-//
-//  /* Box the return value */
-//  mrb_value boxed_return_value = mrb_fixnum_value(unboxed_return_value);
-//
-//  return boxed_return_value;
-//}
+/**
+ * int
+ * escaped_copy(char *restrict dst, const char *restrict src, int bufsize, int * maxroom)
+ */
+#define mruby_Procps_escaped_copy_FUNCTION
+mrb_value
+mruby_Procps_escaped_copy(mrb_state* mrb, mrb_value self)
+{
+
+  char * unboxed_dst = NULL;
+  char * unboxed_src = NULL;
+  mrb_int unboxed_bufsize;
+  mrb_value boxed_maxroom;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "zzio", &unboxed_dst, &unboxed_src, &unboxed_bufsize, &boxed_maxroom);
+
+  /* Type checking */
+  if (!mruby_Procps_typecheck_void_pointer(mrb, boxed_maxroom, "int *")) {
+    return mrb_nil_value();
+  }
+
+  /* Unbox params */
+  void * unboxed_maxroom = (mrb_nil_p(boxed_maxroom) ? NULL : mruby_Procps_unbox_void_pointer(mrb, boxed_maxroom));
+
+  /* Invocation */
+  int unboxed_return_value = escaped_copy(unboxed_dst, unboxed_src, unboxed_bufsize, unboxed_maxroom);
+
+  /* Box the return value */
+  mrb_value boxed_return_value = mrb_fixnum_value(unboxed_return_value);
+
+  return boxed_return_value;
+}
 
 /**
  * void
@@ -283,10 +259,6 @@ mruby_Procps_freeproc(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &boxed_p);
 
   /* Type checking */
-  if (!mruby_Procps_typecheck_Proc(mrb, boxed_p)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Proc expected");
-    return mrb_nil_value();
-  }
 
   /* Unbox params */
   proc_t * unboxed_p = (mrb_nil_p(boxed_p) ? NULL : mruby_Procps_unbox_proc_t(boxed_p));
@@ -361,41 +333,34 @@ mruby_Procps_get_pid_digits(mrb_state* mrb, mrb_value self)
   return boxed_return_value;
 }
 
-///**
-// * proc_t *
-// * get_proc_stats(pid_t pid, proc_t * p)
-// */
-//#define mruby_Procps_get_proc_stats_FUNCTION
-//mrb_value
-//mruby_Procps_get_proc_stats(mrb_state* mrb, mrb_value self)
-//{
-//
-//  mrb_value boxed_pid;
-//  mrb_value boxed_p;
-//
-//  /* Fetch the args */
-//  mrb_get_args(mrb, "oo", &boxed_pid, &boxed_p);
-//
-//  /* Type checking */
-//  TODO_type_check_pid_t(boxed_pid);
-//  if (!mruby_Procps_typecheck_Proc(mrb, boxed_p)) {
-//    mrb_raise(mrb, E_TYPE_ERROR, "Proc expected");
-//    return mrb_nil_value();
-//  }
-//
-//  /* Unbox params */
-//  pid_t unboxed_pid = TODO_mruby_unbox_pid_t(boxed_pid);
-//
-//  proc_t * unboxed_p = (mrb_nil_p(boxed_p) ? NULL : mruby_Procps_unbox_proc_t(boxed_p));
-//
-//  /* Invocation */
-//  proc_t * unboxed_return_value = get_proc_stats(unboxed_pid, unboxed_p);
-//
-//  /* Box the return value */
-//  mrb_value boxed_return_value = (unboxed_return_value == NULL ? mrb_nil_value() : mruby_Procps_box_proc_t(mrb, unboxed_return_value));
-//
-//  return boxed_return_value;
-//}
+/**
+ * proc_t *
+ * get_proc_stats(pid_t pid, proc_t * p)
+ */
+#define mruby_Procps_get_proc_stats_FUNCTION
+mrb_value
+mruby_Procps_get_proc_stats(mrb_state* mrb, mrb_value self)
+{
+
+  mrb_int unboxed_pid;
+  mrb_value boxed_p;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "io", &unboxed_pid, &boxed_p);
+
+  /* Type checking */
+
+  /* Unbox params */
+  proc_t * unboxed_p = (mrb_nil_p(boxed_p) ? NULL : mruby_Procps_unbox_proc_t(boxed_p));
+
+  /* Invocation */
+  proc_t * unboxed_return_value = get_proc_stats(unboxed_pid, unboxed_p);
+
+  /* Box the return value */
+  mrb_value boxed_return_value = (unboxed_return_value == NULL ? mrb_nil_value() : mruby_Procps_box_proc_t(mrb, unboxed_return_value));
+
+  return boxed_return_value;
+}
 
 ///**
 // * int
@@ -695,10 +660,6 @@ mruby_Procps_look_up_our_self(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &boxed_p);
 
   /* Type checking */
-  if (!mruby_Procps_typecheck_Proc(mrb, boxed_p)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "Proc expected");
-    return mrb_nil_value();
-  }
 
   /* Unbox params */
   proc_t * unboxed_p = (mrb_nil_p(boxed_p) ? NULL : mruby_Procps_unbox_proc_t(boxed_p));
@@ -972,71 +933,75 @@ mruby_Procps_put_slabinfo(mrb_state* mrb, mrb_value self)
 //  return boxed_return_value;
 //}
 
-///**
-// * proc_t *
-// * readeither(PROCTAB *const restrict PT, proc_t *restrict x)
-// */
-//#define mruby_Procps_readeither_FUNCTION
-//mrb_value
-//mruby_Procps_readeither(mrb_state* mrb, mrb_value self)
-//{
-//
-//  mrb_value boxed_PT;
-//  mrb_value boxed_x;
-//
-//  /* Fetch the args */
-//  mrb_get_args(mrb, "oo", &boxed_PT, &boxed_x);
-//
-//  /* Type checking */
-//  TODO_type_check_PROCTAB_PTR_restrict(boxed_PT);
-//  TODO_type_check_proc_t_PTR_restrict(boxed_x);
-//
-//  /* Unbox params */
-//  PROCTAB *const restrict unboxed_PT = TODO_mruby_unbox_PROCTAB_PTR_restrict(boxed_PT);
-//
-//  proc_t *restrict unboxed_x = TODO_mruby_unbox_proc_t_PTR_restrict(boxed_x);
-//
-//  /* Invocation */
-//  proc_t * unboxed_return_value = readeither(unboxed_PT, unboxed_x);
-//
-//  /* Box the return value */
-//  mrb_value boxed_return_value = (unboxed_return_value == NULL ? mrb_nil_value() : mruby_Procps_box_proc_t(mrb, unboxed_return_value));
-//
-//  return boxed_return_value;
-//}
+/**
+ * proc_t *
+ * readeither(PROCTAB *const restrict PT, proc_t *restrict x)
+ */
+#define mruby_Procps_readeither_FUNCTION
+mrb_value
+mruby_Procps_readeither(mrb_state* mrb, mrb_value self)
+{
 
-///**
-// * proc_t *
-// * readproc(PROCTAB *const restrict PT, proc_t *restrict p)
-// */
-//#define mruby_Procps_readproc_FUNCTION
-//mrb_value
-//mruby_Procps_readproc(mrb_state* mrb, mrb_value self)
-//{
-//
-//  mrb_value boxed_PT;
-//  mrb_value boxed_p;
-//
-//  /* Fetch the args */
-//  mrb_get_args(mrb, "oo", &boxed_PT, &boxed_p);
-//
-//  /* Type checking */
-//  TODO_type_check_PROCTAB_PTR_restrict(boxed_PT);
-//  TODO_type_check_proc_t_PTR_restrict(boxed_p);
-//
-//  /* Unbox params */
-//  PROCTAB *const restrict unboxed_PT = TODO_mruby_unbox_PROCTAB_PTR_restrict(boxed_PT);
-//
-//  proc_t *restrict unboxed_p = TODO_mruby_unbox_proc_t_PTR_restrict(boxed_p);
-//
-//  /* Invocation */
-//  proc_t * unboxed_return_value = readproc(unboxed_PT, unboxed_p);
-//
-//  /* Box the return value */
-//  mrb_value boxed_return_value = (unboxed_return_value == NULL ? mrb_nil_value() : mruby_Procps_box_proc_t(mrb, unboxed_return_value));
-//
-//  return boxed_return_value;
-//}
+  mrb_value boxed_PT;
+  mrb_value boxed_x;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oo", &boxed_PT, &boxed_x);
+
+  /* Type checking */
+  if (!mruby_Procps_typecheck_PROCTAB(mrb, boxed_PT)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "PROCTAB expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox params */
+  PROCTAB *const restrict unboxed_PT = (mrb_nil_p(boxed_PT) ? NULL : mruby_Procps_unbox_PROCTAB(boxed_PT));
+
+  proc_t *restrict unboxed_x = (mrb_nil_p(boxed_x) ? NULL : mruby_Procps_unbox_proc_t(boxed_x));
+
+  /* Invocation */
+  proc_t * unboxed_return_value = readeither(unboxed_PT, unboxed_x);
+
+  /* Box the return value */
+  mrb_value boxed_return_value = (unboxed_return_value == NULL ? mrb_nil_value() : mruby_Procps_box_proc_t(mrb, unboxed_return_value));
+
+  return boxed_return_value;
+}
+
+/**
+ * proc_t *
+ * readproc(PROCTAB *const restrict PT, proc_t *restrict p)
+ */
+#define mruby_Procps_readproc_FUNCTION
+mrb_value
+mruby_Procps_readproc(mrb_state* mrb, mrb_value self)
+{
+
+  mrb_value boxed_PT;
+  mrb_value boxed_p;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "oo", &boxed_PT, &boxed_p);
+
+  /* Type checking */
+  if (!mruby_Procps_typecheck_PROCTAB(mrb, boxed_PT)) {
+    mrb_raise(mrb, E_TYPE_ERROR, "PROCTAB expected");
+    return mrb_nil_value();
+  }
+
+  /* Unbox params */
+  PROCTAB *const restrict unboxed_PT = (mrb_nil_p(boxed_PT) ? NULL : mruby_Procps_unbox_PROCTAB(boxed_PT));
+
+  proc_t *restrict unboxed_p = (mrb_nil_p(boxed_p) ? NULL : mruby_Procps_unbox_proc_t(boxed_p));
+
+  /* Invocation */
+  proc_t * unboxed_return_value = readproc(unboxed_PT, unboxed_p);
+
+  /* Box the return value */
+  mrb_value boxed_return_value = (unboxed_return_value == NULL ? mrb_nil_value() : mruby_Procps_box_proc_t(mrb, unboxed_return_value));
+
+  return boxed_return_value;
+}
 
 ///**
 // * proc_t **
@@ -1080,14 +1045,17 @@ mruby_Procps_put_slabinfo(mrb_state* mrb, mrb_value self)
 //  /* Type checking */
 //  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_proc_t_PTR_RPAREN(boxed_want_proc);
 //  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_proc_t_PTR_RPAREN(boxed_want_task);
-//  TODO_type_check_PROCTAB_PTR_restrict(boxed_PT);
+//  if (!mruby_Procps_typecheck_PROCTAB(mrb, boxed_PT)) {
+//    mrb_raise(mrb, E_TYPE_ERROR, "PROCTAB expected");
+//    return mrb_nil_value();
+//  }
 //
 //  /* Unbox params */
 //  int (*unboxed_want_proc)(proc_t *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_proc_t_PTR_RPAREN(boxed_want_proc);
 //
 //  int (*unboxed_want_task)(proc_t *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_proc_t_PTR_RPAREN(boxed_want_task);
 //
-//  PROCTAB *const restrict unboxed_PT = TODO_mruby_unbox_PROCTAB_PTR_restrict(boxed_PT);
+//  PROCTAB *const restrict unboxed_PT = (mrb_nil_p(boxed_PT) ? NULL : mruby_Procps_unbox_PROCTAB(boxed_PT));
 //
 //  /* Invocation */
 //  proc_data_t * unboxed_return_value = readproctab2(unboxed_want_proc, unboxed_want_task, unboxed_PT);
@@ -1115,12 +1083,15 @@ mruby_Procps_put_slabinfo(mrb_state* mrb, mrb_value self)
 //
 //  /* Type checking */
 //  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_proc_t_PTR_RPAREN(boxed_want_task);
-//  TODO_type_check_PROCTAB_PTR_restrict(boxed_PT);
+//  if (!mruby_Procps_typecheck_PROCTAB(mrb, boxed_PT)) {
+//    mrb_raise(mrb, E_TYPE_ERROR, "PROCTAB expected");
+//    return mrb_nil_value();
+//  }
 //
 //  /* Unbox params */
 //  int (*unboxed_want_task)(proc_t *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_proc_t_PTR_RPAREN(boxed_want_task);
 //
-//  PROCTAB *const restrict unboxed_PT = TODO_mruby_unbox_PROCTAB_PTR_restrict(boxed_PT);
+//  PROCTAB *const restrict unboxed_PT = (mrb_nil_p(boxed_PT) ? NULL : mruby_Procps_unbox_PROCTAB(boxed_PT));
 //
 //  /* Invocation */
 //  proc_data_t * unboxed_return_value = readproctab3(unboxed_want_task, unboxed_PT);
@@ -1148,16 +1119,18 @@ mruby_Procps_put_slabinfo(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "ooo", &boxed_PT, &boxed_p, &boxed_t);
 //
 //  /* Type checking */
-//  TODO_type_check_PROCTAB_PTR_restrict(boxed_PT);
+//  if (!mruby_Procps_typecheck_PROCTAB(mrb, boxed_PT)) {
+//    mrb_raise(mrb, E_TYPE_ERROR, "PROCTAB expected");
+//    return mrb_nil_value();
+//  }
 //  TODO_type_check_proc_t_PTR_restrict(boxed_p);
-//  TODO_type_check_proc_t_PTR_restrict(boxed_t);
 //
 //  /* Unbox params */
-//  PROCTAB *const restrict unboxed_PT = TODO_mruby_unbox_PROCTAB_PTR_restrict(boxed_PT);
+//  PROCTAB *const restrict unboxed_PT = (mrb_nil_p(boxed_PT) ? NULL : mruby_Procps_unbox_PROCTAB(boxed_PT));
 //
 //  const proc_t *const restrict unboxed_p = TODO_mruby_unbox_proc_t_PTR_restrict(boxed_p);
 //
-//  proc_t *restrict unboxed_t = TODO_mruby_unbox_proc_t_PTR_restrict(boxed_t);
+//  proc_t *restrict unboxed_t = (mrb_nil_p(boxed_t) ? NULL : mruby_Procps_unbox_proc_t(boxed_t));
 //
 //  /* Invocation */
 //  proc_t * unboxed_return_value = readtask(unboxed_PT, unboxed_p, unboxed_t);
@@ -1168,34 +1141,28 @@ mruby_Procps_put_slabinfo(mrb_state* mrb, mrb_value self)
 //  return boxed_return_value;
 //}
 
-///**
-// * int
-// * signal_name_to_number(const char *restrict name)
-// */
-//#define mruby_Procps_signal_name_to_number_FUNCTION
-//mrb_value
-//mruby_Procps_signal_name_to_number(mrb_state* mrb, mrb_value self)
-//{
-//
-//  mrb_value boxed_name;
-//
-//  /* Fetch the args */
-//  mrb_get_args(mrb, "o", &boxed_name);
-//
-//  /* Type checking */
-//  TODO_type_check_char_PTR_restrict(boxed_name);
-//
-//  /* Unbox params */
-//  const char *restrict unboxed_name = TODO_mruby_unbox_char_PTR_restrict(boxed_name);
-//
-//  /* Invocation */
-//  int unboxed_return_value = signal_name_to_number(unboxed_name);
-//
-//  /* Box the return value */
-//  mrb_value boxed_return_value = mrb_fixnum_value(unboxed_return_value);
-//
-//  return boxed_return_value;
-//}
+/**
+ * int
+ * signal_name_to_number(const char *restrict name)
+ */
+#define mruby_Procps_signal_name_to_number_FUNCTION
+mrb_value
+mruby_Procps_signal_name_to_number(mrb_state* mrb, mrb_value self)
+{
+
+  char * unboxed_name = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "z", &unboxed_name);
+
+  /* Invocation */
+  int unboxed_return_value = signal_name_to_number(unboxed_name);
+
+  /* Box the return value */
+  mrb_value boxed_return_value = mrb_fixnum_value(unboxed_return_value);
+
+  return boxed_return_value;
+}
 
 /**
  * const char *
@@ -1243,34 +1210,28 @@ mruby_Procps_sprint_uptime(mrb_state* mrb, mrb_value self)
   return boxed_return_value;
 }
 
-///**
-// * char *
-// * strtosig(const char *restrict s)
-// */
-//#define mruby_Procps_strtosig_FUNCTION
-//mrb_value
-//mruby_Procps_strtosig(mrb_state* mrb, mrb_value self)
-//{
-//
-//  mrb_value boxed_s;
-//
-//  /* Fetch the args */
-//  mrb_get_args(mrb, "o", &boxed_s);
-//
-//  /* Type checking */
-//  TODO_type_check_char_PTR_restrict(boxed_s);
-//
-//  /* Unbox params */
-//  const char *restrict unboxed_s = TODO_mruby_unbox_char_PTR_restrict(boxed_s);
-//
-//  /* Invocation */
-//  char * unboxed_return_value = strtosig(unboxed_s);
-//
-//  /* Box the return value */
-//  mrb_value boxed_return_value = (unboxed_return_value == NULL ? mrb_nil_value() : mruby_Procps_box_void_pointer(mrb, unboxed_return_value));
-//
-//  return boxed_return_value;
-//}
+/**
+ * char *
+ * strtosig(const char *restrict s)
+ */
+#define mruby_Procps_strtosig_FUNCTION
+mrb_value
+mruby_Procps_strtosig(mrb_state* mrb, mrb_value self)
+{
+
+  char * unboxed_s = NULL;
+
+  /* Fetch the args */
+  mrb_get_args(mrb, "z", &unboxed_s);
+
+  /* Invocation */
+  char * unboxed_return_value = strtosig(unboxed_s);
+
+  /* Box the return value */
+  mrb_value boxed_return_value = (unboxed_return_value == NULL ? mrb_nil_value() : mruby_Procps_box_void_pointer(mrb, unboxed_return_value));
+
+  return boxed_return_value;
+}
 
 ///**
 // * int

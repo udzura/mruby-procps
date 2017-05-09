@@ -28,6 +28,7 @@
 /*
  * TODO: Include your library here
  */
+#include "procps_headers.h"
 
 #include "generated/mruby_to_native_ref.h"
 
