@@ -10,7 +10,7 @@ mrb_value mruby_Procps_openproc_by_pids(mrb_state *mrb, mrb_value self) {
   for (int i = 0; i < size; i++) {
     pidlist[i] = (pid_t)mrb_fixnum(pid_array[i]);
   }
-  pidlist[size] = NULL;
+  pidlist[size] = 0;
 
   /* Invocation */
   PROCTAB *unboxed_return_value = openproc(unboxed_flags | PROC_PID, pidlist);
@@ -22,4 +22,14 @@ mrb_value mruby_Procps_openproc_by_pids(mrb_state *mrb, mrb_value self) {
            : mruby_Procps_box_PROCTAB(mrb, unboxed_return_value));
 
   return boxed_return_value;
+}
+
+mrb_value mrb_Proc_get_tid(mrb_state *mrb, mrb_value self) {
+  proc_t *p = mruby_Procps_unbox_proc_t(self);
+  return mrb_fixnum_value(p->tid);
+}
+
+mrb_value mrb_Proc_get_ppid(mrb_state *mrb, mrb_value self) {
+  proc_t *p = mruby_Procps_unbox_proc_t(self);
+  return mrb_fixnum_value(p->ppid);
 }
